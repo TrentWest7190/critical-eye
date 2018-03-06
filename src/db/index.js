@@ -6,7 +6,8 @@ import sharpnessTypeDefs from './sharpnessTypeDefs.json'
 const db = {
   weapons,
   weaponTypeDefs,
-  skills
+  skills,
+  sharpnessTypeDefs
 }
 
 export default db

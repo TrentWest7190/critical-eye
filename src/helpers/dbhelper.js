@@ -27,5 +27,10 @@ export default {
 
   getSharpnessMultiplier(sharpnessName) {
     return db.sharpnessTypeDefs[sharpnessName]
+  },
+
+  getSharpnessForHandicraftAndID(wep_id, handicraft_level) {
+    const weapon = this.weapon(wep_id)
+    return weapon.sharpness_data.find(x => x.handicraft_level === handicraft_level)
   }
 }

@@ -1,18 +1,46 @@
 import { BigNumber } from 'bignumber.js'
 import dbhelper from './dbhelper'
 
-export default function calculate(skillsArray, weaponArray) {
-  const weapon = weaponArray[0]
-  const totalAttackMultiplier = getTotalAttackMultipliers(skillsArray)
-  const totalAttackMod = getTotalAttackMod(skillsArray)
-  const totalAttack = getTotalAttack(weapon.true_attack, totalAttackMultiplier, totalAttackMod)
-  const totalAffinityMod = getTotalAffinityMod(skillsArray)
-  const totalAffinity = getTotalAffinity(weapon.affinity, totalAffinityMod)
-  const critBoost = skillsArray.find(x => x.critMulti) || 0.25
-  const critMultiplier = getCritMultiplier(critBoost, totalAffinity)
-  const isRanged = getIsRanged(weapon.wep_type_id)
+export default function calculate(skillsArray, weaponArray, minimumSharpness, handicraftLevel) {
+  const sharpnesses = ["red", "orange", "yellow", "green", "blue", "white"]
+  const sharpnessIndex = sharpnesses.indexOf(minimumSharpness)
 
-  const finalDamage = Math.round(new BigNumber(totalAttack).times(critMultiplier).times(isRanged ? 1 : dbhelper.getSharpnessMultiplier("white")))
+  const sharpnessesToCalculate = sharpnesses.slice(sharpnessIndex)
+  const returnWeapons = weaponArray.map(weapon => {
+    const totalAttackMultiplier = getTotalAttackMultipliers(skillsArray)
+    const totalAttackMod = getTotalAttackMod(skillsArray)
+    const totalAttack = getTotalAttack(weapon.true_attack, totalAttackMultiplier, totalAttackMod)
+    const totalAffinityMod = getTotalAffinityMod(skillsArray)
+    const totalAffinity = getTotalAffinity(weapon.affinity, totalAffinityMod)
+    const critBoost = skillsArray.find(x => x.critMulti) || 0.25
+    const critMultiplier = getCritMultiplier(critBoost, totalAffinity)
+    const isRanged = getIsRanged(weapon.wep_type_id)
+
+    console.log(totalAttackMultiplier, totalAttackMod, totalAttack, totalAffinity, critBoost, critMultiplier)
+
+    const sharpness_data = dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
+    let damageCount = 0
+    let sharpnessValue = 0
+    sharpnessesToCalculate.forEach(sharp => {
+      const newSharpness = sharpness_data[sharp]
+      sharpnessValue += newSharpness
+      console.log(newSharpness, sharpnessValue)
+      const newDamage = Math.round(new BigNumber(totalAttack)
+      .times(critMultiplier)
+      .times(isRanged ? 1 : dbhelper.getSharpnessMultiplier(sharp))
+      .times(isRanged ? 1 : newSharpness).toNumber())
+
+      damageCount += newDamage
+      console.log(newDamage, damageCount)
+    })
+    return {
+      ...weapon,
+      calculatedAttack: Math.round(new BigNumber(damageCount).div(sharpnessValue).toNumber())
+    }
+  })
+
+  return returnWeapons
+  
 }
 
 function getTotalAttack(trueAttack, totalAttackMultiplier, totalAttackMod) {

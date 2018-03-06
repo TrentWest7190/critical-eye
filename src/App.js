@@ -53,7 +53,8 @@ class App extends Component {
 
   calculate() {
     const skillsArray = Object.values(this.state.skills).filter(Boolean).map(x => x.value)
-    calculate(skillsArray, this.state.selectedWeapons)
+    const results = calculate(skillsArray, this.state.selectedWeapons, "green", 0)
+    console.log(results)
   }
 
   render() {
