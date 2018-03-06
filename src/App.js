@@ -3,9 +3,15 @@ import Select from 'react-select'
 import VirtualizedSelect from 'react-virtualized-select'
 import './App.css'
 
+import styled from 'styled-components'
 import dbhelper from './helpers/dbhelper'
 import buildSkillString from './helpers/buildSkillString'
 import calculate from './helpers/calculate'
+
+const CalculateButton = styled.button`
+  width: 100%;
+  height: 150px;
+`
 
 class App extends Component {
   constructor () {
@@ -19,7 +25,8 @@ class App extends Component {
     this.state = {
       selectedWeaponClass: null,
       skills: {
-      }
+      },
+      selectedWeapons: []
     }
   }
 
@@ -86,7 +93,7 @@ class App extends Component {
               )
             })
           }
-          <button onClick={this.calculate}>Calculate!</button>
+          <CalculateButton onClick={this.calculate} disabled={this.state.selectedWeapons.length === 0}>Calculate!</CalculateButton>
         </div>
       </div>
     )

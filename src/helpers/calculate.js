@@ -16,7 +16,7 @@ export default function calculate(skillsArray, weaponArray, minimumSharpness, ha
     const critMultiplier = getCritMultiplier(critBoost, totalAffinity)
     const isRanged = getIsRanged(weapon.wep_type_id)
 
-    console.log(totalAttackMultiplier, totalAttackMod, totalAttack, totalAffinity, critBoost, critMultiplier)
+    //console.log(totalAttackMultiplier, totalAttackMod, totalAttack, totalAffinity, critBoost, critMultiplier)
 
     const sharpness_data = dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
     let damageCount = 0
@@ -24,14 +24,14 @@ export default function calculate(skillsArray, weaponArray, minimumSharpness, ha
     sharpnessesToCalculate.forEach(sharp => {
       const newSharpness = sharpness_data[sharp]
       sharpnessValue += newSharpness
-      console.log(newSharpness, sharpnessValue)
+      //console.log(newSharpness, sharpnessValue)
       const newDamage = Math.round(new BigNumber(totalAttack)
       .times(critMultiplier)
       .times(isRanged ? 1 : dbhelper.getSharpnessMultiplier(sharp))
       .times(isRanged ? 1 : newSharpness).toNumber())
 
       damageCount += newDamage
-      console.log(newDamage, damageCount)
+      //console.log(newDamage, damageCount)
     })
     return {
       ...weapon,
