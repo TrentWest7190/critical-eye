@@ -27,10 +27,10 @@ export default function calculate(skillsArray, weaponArray, minimumSharpness, ha
       const newSharpness = sharpness_data[sharp]
       sharpnessValue += newSharpness
       //console.log(newSharpness, sharpnessValue)
-      const newDamage = new BigNumber(totalAttack)
+      const newDamage = Math.round(new BigNumber(totalAttack)
       .times(critMultiplier)
       .times(isRanged ? 1 : dbhelper.getSharpnessMultiplier(sharp))
-      .times(isRanged ? 1 : newSharpness).toNumber()
+      .times(isRanged ? 1 : newSharpness).toNumber())
 
       damageCount += newDamage
       //console.log(newDamage, damageCount)
