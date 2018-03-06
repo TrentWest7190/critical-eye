@@ -3,10 +3,10 @@ import dbhelper from './dbhelper'
 
 export default function calculate(skillsArray, weaponArray, minimumSharpness, handicraftLevel) {
   const sharpnesses = ["red", "orange", "yellow", "green", "blue", "white"]
-  const sharpnessIndex = sharpnesses.indexOf(minimumSharpness)
 
-  const sharpnessesToCalculate = sharpnesses.slice(sharpnessIndex)
   const returnWeapons = weaponArray.map(weapon => {
+    const sharpness_data = dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
+    const maxSharpnessValue = getMaxSharpnessValue(sharpness_data)
     const totalAttackMultiplier = getTotalAttackMultipliers(skillsArray)
     const totalAttackMod = getTotalAttackMod(skillsArray)
     const totalAttack = getTotalAttack(weapon.true_attack, totalAttackMultiplier, totalAttackMod)
@@ -17,25 +17,30 @@ export default function calculate(skillsArray, weaponArray, minimumSharpness, ha
     const isRanged = getIsRanged(weapon.wep_type_id)
 
     //console.log(totalAttackMultiplier, totalAttackMod, totalAttack, totalAffinity, critBoost, critMultiplier)
-
-    const sharpness_data = dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
+    let sharpnessIndex = minimumSharpness
+    if (sharpnessIndex >= maxSharpnessValue) sharpnessIndex = maxSharpnessValue - 1
+    const sharpnessesToCalculate = sharpnesses.slice(sharpnessIndex, maxSharpnessValue)
+    console.log(sharpnessIndex, maxSharpnessValue, sharpnessesToCalculate)
     let damageCount = 0
     let sharpnessValue = 0
     sharpnessesToCalculate.forEach(sharp => {
       const newSharpness = sharpness_data[sharp]
       sharpnessValue += newSharpness
       //console.log(newSharpness, sharpnessValue)
-      const newDamage = Math.round(new BigNumber(totalAttack)
+      const newDamage = new BigNumber(totalAttack)
       .times(critMultiplier)
       .times(isRanged ? 1 : dbhelper.getSharpnessMultiplier(sharp))
-      .times(isRanged ? 1 : newSharpness).toNumber())
+      .times(isRanged ? 1 : newSharpness).toNumber()
 
       damageCount += newDamage
       //console.log(newDamage, damageCount)
     })
     return {
-      ...weapon,
-      calculatedAttack: Math.round(new BigNumber(damageCount).div(sharpnessValue).toNumber())
+      true_attack: weapon.true_attack,
+      name: weapon.name,
+      affinity: weapon.affinity,
+      calculatedAttack: Math.round(new BigNumber(damageCount).div(sharpnessValue).toNumber()),
+      sharpness: sharpness_data
     }
   })
 
@@ -73,6 +78,15 @@ function getCritMultiplier(critBoost, totalAffinity) {
 function getIsRanged(wep_type_id) {
   const rangedWeapons = [ 12, 13, 14 ]
   return rangedWeapons.includes(wep_type_id)
+}
+
+function getMaxSharpnessValue(sharpness_data) {
+  if (sharpness_data.white) return 6
+  if (sharpness_data.blue) return 5
+  if (sharpness_data.green) return 4
+  if (sharpness_data.yellow) return 3
+  if (sharpness_data.orange) return 2
+  if (sharpness_data.red) return 1
 }
 
 const getTotalModValue = (valueName) => (a, v) => {

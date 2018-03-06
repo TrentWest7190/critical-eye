@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select'
 import VirtualizedSelect from 'react-virtualized-select'
+import DisplayTable from './components/DisplayTable'
 import './App.css'
 
 import styled from 'styled-components'
@@ -18,26 +19,57 @@ class App extends Component {
     super()
     this.weaponTypes = dbhelper.weaponTypeDefs().map(x => ({ value: x.wep_type_id, label: x.name }))
     this.allWeapons = dbhelper.allWeapons().map(x => ({ value: x.wep_id, label: x.name }))
+    this.sharpnessLevels = [
+      { value: 0, label: 'Red' },
+      { value: 1, label: 'Orange' },
+      { value: 2, label: 'Yellow' },
+      { value: 3, label: 'Green' },
+      { value: 4, label: 'Blue' },
+      { value: 5, label: 'White' }
+    ]
     this.skills = dbhelper.allSkills()
     this.calculate = this.calculate.bind(this)
     this.updateSkill = this.updateSkill.bind(this)
     this.selectWeaponClass = this.selectWeaponClass.bind(this)
+    this.selectSharpnessLevel = this.selectSharpnessLevel.bind(this)
+    this.selectHandicraftLevel = this.selectHandicraftLevel.bind(this)
     this.state = {
+      selectedSharpnessLevel: 5,
       selectedWeaponClass: null,
+      handicraftLevel: 0,
       skills: {
       },
-      selectedWeapons: []
+      selectedWeapons: [],
+      calculatedWeapons: []
     }
+  }
+
+  selectHandicraftLevel(selectedValue) {
+    this.setState((prevState, props) => {
+      return {
+        ...prevState,
+        handicraftLevel: selectedValue ? selectedValue.value : 0
+      }
+    })
+  }
+
+  selectSharpnessLevel(selectedValue) {
+    this.setState((prevState, props) => {
+      return {
+        ...prevState,
+        selectedSharpnessLevel: selectedValue ? selectedValue.value : 5
+      }
+    })
   }
 
   selectWeaponClass(selectedValue) {
     this.setState((prevState, props) => {
       return {
         ...prevState,
-        selectedWeaponClass: selectedValue.value,
+        selectedWeaponClass: selectedValue && selectedValue.value,
         selectedWeapons: dbhelper.filterWeapons({
           field_name: 'wep_type_id',
-          field_value: selectedValue.value
+          field_value: selectedValue && selectedValue.value
         })
       }
     })
@@ -60,8 +92,13 @@ class App extends Component {
 
   calculate() {
     const skillsArray = Object.values(this.state.skills).filter(Boolean).map(x => x.value)
-    const results = calculate(skillsArray, this.state.selectedWeapons, "green", 0)
-    console.log(results)
+    const results = calculate(skillsArray, this.state.selectedWeapons, this.state.selectedSharpnessLevel, this.state.handicraftLevel)
+    this.setState((prevState, props) => {
+      return {
+        prevState,
+        calculatedWeapons: results
+      }
+    })
   }
 
   render() {
@@ -70,10 +107,17 @@ class App extends Component {
         <div>
           <h1>Select Your Weapon Class</h1>
           <VirtualizedSelect
-            placeholder="Weapons"
+            placeholder="Weapon type"
             value={this.state.selectedWeaponClass}
             onChange={this.selectWeaponClass}
             options={this.weaponTypes}
+          />
+          <h3>Minimum sharpness before sharpening</h3>
+          <Select
+            placeholder="Minimum sharpness level"
+            value={this.state.selectedSharpnessLevel}
+            onChange={this.selectSharpnessLevel}
+            options={this.sharpnessLevels}
           />
           <h1>Select Your Modifiers</h1>
           {
@@ -93,8 +137,20 @@ class App extends Component {
               )
             })
           }
+          <div>
+            <span>Handicraft</span>
+            <Select
+              onChange={this.selectHandicraftLevel}
+              value={this.state.handicraftLevel}
+              placeholder="Extends the weapon sharpness gauge. However, it will not increase the gauge past its maximum."
+              options={[1,2,3,4,5].map(x => ({ value: x, label: x }))}
+            />
+          </div>
           <CalculateButton onClick={this.calculate} disabled={this.state.selectedWeapons.length === 0}>Calculate!</CalculateButton>
         </div>
+        <DisplayTable
+          data={this.state.calculatedWeapons}
+        />
       </div>
     )
   }
