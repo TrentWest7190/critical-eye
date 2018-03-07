@@ -19,6 +19,13 @@ const Header = styled.h1`
   font-size: 1.5em;
 `
 
+const SelectorDiv = styled.div`
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.4);
+`
+
 class App extends Component {
   constructor () {
     super()
@@ -211,7 +218,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div>
+        <SelectorDiv>
           <Header>Select Your Weapon Class</Header>
           Single weapon only<input type="checkbox" checked={this.state.singleWeapon} onChange={this.handleSingleWeaponToggle}/>
           <VirtualizedSelect
@@ -264,7 +271,7 @@ class App extends Component {
             <CalculateButton onClick={this.calculateAndReplace} disabled={this.state.selectedWeapons.length === 0}>Calculate and replace</CalculateButton>
             <CalculateButton onClick={this.calculateAndAdd} disabled={this.state.selectedWeapons.length === 0}>Calculate and add</CalculateButton>
           </div>
-        </div>
+        </SelectorDiv>
         <div style={{ padding: 15 }}>
           <DisplayTable
             data={this.state.calculatedWeapons}
