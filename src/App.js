@@ -45,10 +45,9 @@ class App extends Component {
       selectedSharpnessLevel: 5,
       selectedWeaponClass: null,
       handicraftLevel: 0,
-      skills: {
-      },
+      skills: localStorage.getItem('savedSkills') ? JSON.parse(localStorage.getItem('savedSkills')) : {},
       selectedWeapons: [],
-      calculatedWeapons: [],
+      calculatedWeapons: localStorage.getItem('savedWeapons') ? JSON.parse(localStorage.getItem('savedWeapons')) : [],
       singleWeapon: false,
       augments: {
         0: null,
@@ -126,12 +125,14 @@ class App extends Component {
     return (selectedValue) => {
       console.log(skillName, selectedValue)
       this.setState((prevState, props) => {
+        const newSkills = {
+          ...prevState.skills,
+          [skillName]: selectedValue
+        }
+        localStorage.setItem('savedSkills', JSON.stringify(newSkills))
         return {
           ...prevState,
-          skills: {
-            ...prevState.skills,
-            [skillName]: selectedValue
-          }
+          skills: newSkills
         }
       })
     }
@@ -152,9 +153,11 @@ class App extends Component {
     }
     const results = calculate(skillsAndAugments, this.state.selectedWeapons, this.state.selectedSharpnessLevel, this.state.handicraftLevel)
     this.setState((prevState, props) => {
+      const newWeapons = this.state.calculatedWeapons.concat(results)
+      localStorage.setItem('savedWeapons', JSON.stringify(newWeapons))
       return {
         prevState,
-        calculatedWeapons: this.state.calculatedWeapons.concat(results)
+        calculatedWeapons: newWeapons
       }
     })
   }
@@ -174,6 +177,7 @@ class App extends Component {
     }
     const results = calculate(skillsAndAugments, this.state.selectedWeapons, this.state.selectedSharpnessLevel, this.state.handicraftLevel)
     this.setState((prevState, props) => {
+      localStorage.setItem('savedWeapons', JSON.stringify(results))
       return {
         prevState,
         calculatedWeapons: results

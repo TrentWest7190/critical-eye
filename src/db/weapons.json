@@ -33306,23 +33306,6 @@
     "final_form": true
   },
   {
-    "wep_id": 428,
-    "wep_type_id": 5,
-    "name": "Azure Star Blade",
-    "attack": 363,
-    "true_attack": 110,
-    "element_type": "Water",
-    "element_value": 120,
-    "status_type": "No Status",
-    "status_value": 0,
-    "affinity": 20,
-    "needs_awakening": false,
-    "rarity": 3,
-    "weapon_type": "Long Sword",
-    "sharpness_data": [],
-    "final_form": false
-  },
-  {
     "wep_id": 429,
     "wep_type_id": 6,
     "name": "Metal Bagpipe I",
@@ -58843,6 +58826,16 @@
     "rarity": 1,
     "weapon_type": "Charge Blade",
     "sharpness_data": [
+      {
+        "wep_id": 756,
+        "handicraft_level": 0,
+        "red": 90,
+        "orange": 50,
+        "yellow": 60,
+        "green": 0,
+        "blue": 0,
+        "white": 0
+      },
       {
         "wep_id": 756,
         "handicraft_level": 1,

@@ -6,7 +6,8 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
   const sharpnesses = ["red", "orange", "yellow", "green", "blue", "white"]
 
   const returnWeapons = weaponArray.map(weapon => {
-    const sharpness_data = dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
+    const isRanged = getIsRanged(weapon.wep_type_id)
+    const sharpness_data = isRanged ? {} : dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
     const maxSharpnessValue = getMaxSharpnessValue(sharpness_data)
     const isElemental = (weapon.status_value && !weapon.needs_awakening) || (weapon.element_value && !weapon.needs_awakening)
     const skillsArray = Object.keys(skills).filter(x => Boolean(skills[x])).filter(x => {
@@ -23,12 +24,12 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
     const critMulti = skillsArray.find(x => x.critMulti)
     const critBoost = critMulti && totalAffinity > 0 ? critMulti.critMulti : 0.25
     const critMultiplier = getCritMultiplier(critBoost, totalAffinity)
-    const isRanged = getIsRanged(weapon.wep_type_id)
+    
 
     //console.log(totalAttackMultiplier, totalAttackMod, totalAttack, totalAffinity, critBoost, critMultiplier)
     let sharpnessIndex = minimumSharpness
     if (sharpnessIndex >= maxSharpnessValue) sharpnessIndex = maxSharpnessValue - 1
-    const sharpnessesToCalculate = sharpnesses.slice(sharpnessIndex, maxSharpnessValue)
+    const sharpnessesToCalculate = isRanged ? ["yellow"] : sharpnesses.slice(sharpnessIndex, maxSharpnessValue)
     let damageCount = 0
     let sharpnessValue = 0
     sharpnessesToCalculate.forEach(sharp => {
@@ -47,8 +48,10 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
       true_attack: weapon.true_attack,
       name: weapon.name,
       affinity: weapon.affinity,
-      calculatedAttack: Math.round(new BigNumber(damageCount).div(sharpnessValue).toNumber()),
-      sharpness: sharpness_data
+      calculatedAttack: Math.round(new BigNumber(damageCount).div(isRanged ? 1 : sharpnessValue).toNumber()),
+      sharpness: sharpness_data,
+      weapon_type: weapon.weapon_type,
+      skills: skills
     }
   })
 

@@ -6,6 +6,11 @@ import 'react-table/react-table.css'
 export default function DisplayTable(props) {
     const columns = [
         {
+            Header: 'Type',
+            accessor: 'weapon_type',
+            minWidth: 75
+        },
+        {
             Header: 'Name',
             accessor: 'name',
         },
@@ -25,6 +30,11 @@ export default function DisplayTable(props) {
             Header: 'Sharpness',
             accessor: 'sharpness',
             Cell: props => <SharpnessBar data={props.value}/>
+        },
+        {
+            Header: 'Skills',
+            accessor: 'skills',
+            show: false
         }
     ]
     return(
@@ -37,6 +47,12 @@ export default function DisplayTable(props) {
             ]}
             columns={columns}
             data={props.data}
+            SubComponent={row => {
+                console.log(row.row.skills)
+                return (
+                    <SkillDisplay data={row.row.skills}></SkillDisplay>
+                )
+            }}
         />
     )
 }
@@ -66,5 +82,20 @@ function SharpnessBar(props) {
                 })
             }
         </FlexBar>
+    )
+}
+
+const LevelDisplay = styled.span`
+    margin-right: 5px;
+`
+
+function SkillDisplay(props) {
+    const skillNames = Object.keys(props.data)
+    return (
+        <div>
+            {
+                skillNames.map(x => <LevelDisplay key={x}>{x} : {props.data[x].value.level}</LevelDisplay>)
+            }
+        </div>
     )
 }
