@@ -1,9 +1,9 @@
-.App {
-  display: grid;
-  grid-template-columns: 25% 75%;
-  padding: 15px;
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1170px;
 }
 
-.Select.aug {
-  width: 33.333%
+.container > div {
+  margin-bottom: 10px;
 }

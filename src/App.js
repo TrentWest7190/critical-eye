@@ -3,11 +3,30 @@ import Select from 'react-select'
 import VirtualizedSelect from 'react-virtualized-select'
 import DisplayTable from './components/DisplayTable'
 import './App.css'
+import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card'
+import AppBar from 'material-ui/AppBar'
+import Checkbox from 'material-ui/Checkbox'
+import RaisedButton from 'material-ui/RaisedButton'
 
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import dbhelper from './helpers/dbhelper'
 import buildSkillString from './helpers/buildSkillString'
 import calculate from './helpers/calculate'
+
+const DarkenedCardHeader = styled(CardHeader)`
+  background-color: rgba(0,0,0, .1);
+`
+
+const FlexDiv = styled.div`
+  display: flex;
+  padding: 5px;
+  ${props => props.spaceEvenly && css`
+    justify-content: space-evenly;
+  `}
+  ${props => props.center && css`
+    justify-content: center;
+  `}
+`
 
 const CalculateButton = styled.button`
   width: 300px;
@@ -50,7 +69,7 @@ class App extends Component {
     this.handleSingleWeaponToggle = this.handleSingleWeaponToggle.bind(this)
     this.updateAugment = this.updateAugment.bind(this)
     this.state = {
-      selectedSharpnessLevel: 5,
+      selectedSharpnessLevel: null,
       selectedWeaponClass: null,
       handicraftLevel: 0,
       skills: localStorage.getItem('savedSkills') ? JSON.parse(localStorage.getItem('savedSkills')) : {},
@@ -204,7 +223,7 @@ class App extends Component {
 
       augments = Array.from({ length: numAugs }, (x, i) => (
         <Select
-          className="aug"
+          style={{width: 150}}
           key={i}
           value={this.state.augments[i]}
           placeholder="Augment"
@@ -219,63 +238,93 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SelectorDiv>
-          <Header>Select Your Weapon Class</Header>
-          Single weapon only<input type="checkbox" checked={this.state.singleWeapon} onChange={this.handleSingleWeaponToggle}/>
-          <VirtualizedSelect
-            placeholder={this.state.singleWeapon ? "Weapon" : "Weapon type"}
-            value={this.state.selectedWeaponClass}
-            onChange={this.selectWeaponClass}
-            options={this.state.singleWeapon ? this.allWeapons : this.weaponTypes}
-          />
-          <div style={{ display: "flex" }}>
-            {
-              this.state.singleWeapon && this.state.selectedWeapons[0] && this.state.selectedWeapons[0].final_form &&
-              augments
-            }
-          </div>
-          <div style={{ marginTop: 10 }}>Minimum sharpness before sharpening</div>
-          <Select
-            placeholder="Minimum sharpness level"
-            value={this.state.selectedSharpnessLevel}
-            onChange={this.selectSharpnessLevel}
-            options={this.sharpnessLevels}
-          />
-          <Header>Select Your Modifiers</Header>
-          <div style={{ maxHeight: 415, overflowY: 'scroll', border: '1px solid black', borderRadius: 5, padding: 5}}>
-            {
-              this.skills.map((skill) => {
-                const options = skill.values.map(x => ({ value: x, label: buildSkillString(x) }))
-                return (
-                  <div key={skill.skill_id}>
-                    <span>{skill.name}</span>
-                    <Select
-                      onChange={this.updateSkill(skill.name)}
-                      value={this.state.skills[skill.name]}
-                      placeholder={skill.description}
-                      options={options}
-                    />
-                  </div>
-                  
-                )
-              })
-            }
-            <div>
-              <span>Handicraft</span>
-              <Select
-                onChange={this.selectHandicraftLevel}
-                value={this.state.handicraftLevel}
-                placeholder="Extends the weapon sharpness gauge. However, it will not increase the gauge past its maximum."
-                options={[1,2,3,4,5].map(x => ({ value: x, label: x }))}
+        <AppBar
+          title="Critical Eye"
+        />
+        <div className="container">
+          <Card>
+            <DarkenedCardHeader
+              title="Select your weapon"
+            />
+            <div style={{padding: 15}}>
+              <Checkbox
+                label="Single Weapon"
+                checked={this.state.singleWeapon}
+                onCheck={this.handleSingleWeaponToggle}
               />
+              <FlexDiv spaceEvenly>
+                <VirtualizedSelect
+                  style={{width: 200}}
+                  placeholder={this.state.singleWeapon ? "Weapon" : "Weapon type"}
+                  value={this.state.selectedWeaponClass}
+                  onChange={this.selectWeaponClass}
+                  options={this.state.singleWeapon ? this.allWeapons : this.weaponTypes}
+                />
+                <Select
+                  style={{width: 200}}
+                  placeholder="Minimum sharpness"
+                  value={this.state.selectedSharpnessLevel}
+                  onChange={this.selectSharpnessLevel}
+                  options={this.sharpnessLevels}
+                />
+              </FlexDiv>
+              <FlexDiv center>
+                {
+                  this.state.singleWeapon && this.state.selectedWeapons[0] && this.state.selectedWeapons[0].final_form &&
+                  augments
+                }
+              </FlexDiv>
             </div>
+          </Card>
+          <Card expandable={true} expanded={this.state.expanded}>
+            <DarkenedCardHeader
+              title="Select your modifiers"
+              actAsExpander={true}
+              showExpandableButton={true}
+            />
+            <CardText expandable={true} style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignContent: 'space-around'}}>
+              {
+                this.skills.map((skill) => {
+                  const options = skill.values.map(x => ({ value: x, label: buildSkillString(x) }))
+                  return (
+                    <div key={skill.skill_id} style={{width: '30%'}}>
+                      <span>{skill.name}</span>
+                      <Select
+                        onChange={this.updateSkill(skill.name)}
+                        value={this.state.skills[skill.name]}
+                        placeholder={skill.description}
+                        options={options}
+                      />
+                    </div>
+                    
+                  )
+                })
+              }
+              <div style={{width: '30%'}}>
+                <span>Handicraft</span>
+                <Select
+                  onChange={this.selectHandicraftLevel}
+                  value={this.state.handicraftLevel}
+                  placeholder="Extends the weapon sharpness gauge. However, it will not increase the gauge past its maximum."
+                  options={[1,2,3,4,5].map(x => ({ value: x, label: x }))}
+                />
+              </div>
+            </CardText>
+          </Card>
+          <div style={{ display: 'flex', marginTop: 5, justifyContent: 'space-around' }}>
+            <RaisedButton
+              label="Calculate and replace"
+              primary={true}
+              onClick={this.calculateAndReplace}
+              disabled={this.state.selectedWeapons.length === 0 || this.state.selectedSharpnessLevel < 0}
+            />
+            <RaisedButton
+              label="Calculate and add"
+              primary={true}
+              onClick={this.calculateAndAdd}
+              disabled={this.state.selectedWeapons.length === 0 || this.state.selectedSharpnessLevel < 0}
+            />
           </div>
-          <div style={{ display: 'flex', marginTop: 5 }}>
-            <CalculateButton onClick={this.calculateAndReplace} disabled={this.state.selectedWeapons.length === 0}>Calculate and replace</CalculateButton>
-            <CalculateButton onClick={this.calculateAndAdd} disabled={this.state.selectedWeapons.length === 0}>Calculate and add</CalculateButton>
-          </div>
-        </SelectorDiv>
-        <div style={{ padding: 15, maxWidth: 1000 }}>
           <DisplayTable
             data={this.state.calculatedWeapons}
           />
