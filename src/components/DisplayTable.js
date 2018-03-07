@@ -29,6 +29,12 @@ export default function DisplayTable(props) {
     ]
     return(
         <ReactTable
+            defaultSorted={[
+                {
+                    id: 'calculatedAttack',
+                    desc: true
+                }
+            ]}
             columns={columns}
             data={props.data}
         />
@@ -39,7 +45,7 @@ const FlexBar = styled.div`
     display: flex;
     height: 14px;
     border: 1px solid black;
-    width: 160px;
+    width: 100px;
     background-color: gray;
 `
 
@@ -56,7 +62,7 @@ function SharpnessBar(props) {
         <FlexBar>
             {
                 Object.keys(sharp).map((x) => {
-                    return (<div key={x} style={{ width: sharp[x] * .4, backgroundColor: x }}></div>)
+                    return (<div key={x} style={{ width: sharp[x] * .25, backgroundColor: x }}></div>)
                 })
             }
         </FlexBar>

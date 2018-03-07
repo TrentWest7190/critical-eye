@@ -10,8 +10,13 @@ import buildSkillString from './helpers/buildSkillString'
 import calculate from './helpers/calculate'
 
 const CalculateButton = styled.button`
-  width: 100%;
-  height: 150px;
+  width: 80%;
+  height: 100px;
+  margin: 0 10%;
+`
+
+const Header = styled.h1`
+  font-size: 1.5em;
 `
 
 class App extends Component {
@@ -91,8 +96,7 @@ class App extends Component {
   }
 
   calculate() {
-    const skillsArray = Object.values(this.state.skills).filter(Boolean).map(x => x.value)
-    const results = calculate(skillsArray, this.state.selectedWeapons, this.state.selectedSharpnessLevel, this.state.handicraftLevel)
+    const results = calculate(this.state.skills, this.state.selectedWeapons, this.state.selectedSharpnessLevel, this.state.handicraftLevel)
     this.setState((prevState, props) => {
       return {
         prevState,
@@ -105,21 +109,21 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-          <h1>Select Your Weapon Class</h1>
+          <Header>Select Your Weapon Class</Header>
           <VirtualizedSelect
             placeholder="Weapon type"
             value={this.state.selectedWeaponClass}
             onChange={this.selectWeaponClass}
             options={this.weaponTypes}
           />
-          <h3>Minimum sharpness before sharpening</h3>
+          <div style={{ marginTop: 10 }}>Minimum sharpness before sharpening</div>
           <Select
             placeholder="Minimum sharpness level"
             value={this.state.selectedSharpnessLevel}
             onChange={this.selectSharpnessLevel}
             options={this.sharpnessLevels}
           />
-          <h1>Select Your Modifiers</h1>
+          <Header>Select Your Modifiers</Header>
           {
             this.skills.map((skill) => {
               const options = skill.values.map(x => ({ value: x, label: buildSkillString(x) }))
@@ -148,9 +152,11 @@ class App extends Component {
           </div>
           <CalculateButton onClick={this.calculate} disabled={this.state.selectedWeapons.length === 0}>Calculate!</CalculateButton>
         </div>
-        <DisplayTable
-          data={this.state.calculatedWeapons}
-        />
+        <div style={{ padding: 15 }}>
+          <DisplayTable
+            data={this.state.calculatedWeapons}
+          />
+        </div>
       </div>
     )
   }

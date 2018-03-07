@@ -1,18 +1,27 @@
 import { BigNumber } from 'bignumber.js'
 import dbhelper from './dbhelper'
 
-export default function calculate(skillsArray, weaponArray, minimumSharpness, handicraftLevel) {
+export default function calculate(skills, weaponArray, minimumSharpness, handicraftLevel) {
   const sharpnesses = ["red", "orange", "yellow", "green", "blue", "white"]
+  const skillsArray = Object.values(skills).filter(Boolean).map(x => x.value)
 
   const returnWeapons = weaponArray.map(weapon => {
     const sharpness_data = dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
     const maxSharpnessValue = getMaxSharpnessValue(sharpness_data)
+    const isElemental = (weapon.status_value && !weapon.needs_awakening) || (weapon.element_value && !weapon.needs_awakening)
+    const skillsArray = Object.keys(skills).filter(x => Boolean(skills[x])).filter(x => {
+      if (x  === 'Non-elemental Boost') {
+        return !isElemental
+      }
+      return true
+    }).map(x => skills[x].value)
     const totalAttackMultiplier = getTotalAttackMultipliers(skillsArray)
     const totalAttackMod = getTotalAttackMod(skillsArray)
     const totalAttack = getTotalAttack(weapon.true_attack, totalAttackMultiplier, totalAttackMod)
     const totalAffinityMod = getTotalAffinityMod(skillsArray)
     const totalAffinity = getTotalAffinity(weapon.affinity, totalAffinityMod)
-    const critBoost = skillsArray.find(x => x.critMulti) || 0.25
+    const critMulti = skillsArray.find(x => x.critMulti)
+    const critBoost = critMulti && totalAffinity > 0 ? critMulti.critMulti : 0.25
     const critMultiplier = getCritMultiplier(critBoost, totalAffinity)
     const isRanged = getIsRanged(weapon.wep_type_id)
 
@@ -20,7 +29,6 @@ export default function calculate(skillsArray, weaponArray, minimumSharpness, ha
     let sharpnessIndex = minimumSharpness
     if (sharpnessIndex >= maxSharpnessValue) sharpnessIndex = maxSharpnessValue - 1
     const sharpnessesToCalculate = sharpnesses.slice(sharpnessIndex, maxSharpnessValue)
-    console.log(sharpnessIndex, maxSharpnessValue, sharpnessesToCalculate)
     let damageCount = 0
     let sharpnessValue = 0
     sharpnessesToCalculate.forEach(sharp => {
