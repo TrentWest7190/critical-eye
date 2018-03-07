@@ -38,6 +38,7 @@ class App extends Component {
     this.selectWeaponClass = this.selectWeaponClass.bind(this)
     this.selectSharpnessLevel = this.selectSharpnessLevel.bind(this)
     this.selectHandicraftLevel = this.selectHandicraftLevel.bind(this)
+    this.handleSingleWeaponToggle = this.handleSingleWeaponToggle.bind(this)
     this.state = {
       selectedSharpnessLevel: 5,
       selectedWeaponClass: null,
@@ -45,8 +46,18 @@ class App extends Component {
       skills: {
       },
       selectedWeapons: [],
-      calculatedWeapons: []
+      calculatedWeapons: [],
+      singleWeapon: false
     }
+  }
+
+  handleSingleWeaponToggle(event) {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        singleWeapon: !prevState.singleWeapon
+      }
+    })
   }
 
   selectHandicraftLevel(selectedValue) {
@@ -110,11 +121,12 @@ class App extends Component {
       <div className="App">
         <div>
           <Header>Select Your Weapon Class</Header>
+          Single weapon only<input type="checkbox" checked={this.state.singleWeapon} onChange={this.handleSingleWeaponToggle}/>
           <VirtualizedSelect
-            placeholder="Weapon type"
+            placeholder={this.state.singleWeapon ? "Weapon" : "Weapon type"}
             value={this.state.selectedWeaponClass}
             onChange={this.selectWeaponClass}
-            options={this.weaponTypes}
+            options={this.state.singleWeapon ? this.allWeapons : this.weaponTypes}
           />
           <div style={{ marginTop: 10 }}>Minimum sharpness before sharpening</div>
           <Select
