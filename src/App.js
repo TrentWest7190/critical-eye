@@ -11,11 +11,12 @@ import calculate from './helpers/calculate'
 
 const CalculateButton = styled.button`
   width: 300px;
-  height: 100px;
+  height: 50px;
   margin: 0 10%;
 `
 
 const Header = styled.h1`
+  margin-top: 5px;
   font-size: 1.5em;
 `
 
@@ -241,38 +242,40 @@ class App extends Component {
             options={this.sharpnessLevels}
           />
           <Header>Select Your Modifiers</Header>
-          {
-            this.skills.map((skill) => {
-              const options = skill.values.map(x => ({ value: x, label: buildSkillString(x) }))
-              return (
-                <div key={skill.skill_id}>
-                  <span>{skill.name}</span>
-                  <Select
-                    onChange={this.updateSkill(skill.name)}
-                    value={this.state.skills[skill.name]}
-                    placeholder={skill.description}
-                    options={options}
-                  />
-                </div>
-                
-              )
-            })
-          }
-          <div>
-            <span>Handicraft</span>
-            <Select
-              onChange={this.selectHandicraftLevel}
-              value={this.state.handicraftLevel}
-              placeholder="Extends the weapon sharpness gauge. However, it will not increase the gauge past its maximum."
-              options={[1,2,3,4,5].map(x => ({ value: x, label: x }))}
-            />
+          <div style={{ maxHeight: 415, overflowY: 'scroll', border: '1px solid black', borderRadius: 5, padding: 5}}>
+            {
+              this.skills.map((skill) => {
+                const options = skill.values.map(x => ({ value: x, label: buildSkillString(x) }))
+                return (
+                  <div key={skill.skill_id}>
+                    <span>{skill.name}</span>
+                    <Select
+                      onChange={this.updateSkill(skill.name)}
+                      value={this.state.skills[skill.name]}
+                      placeholder={skill.description}
+                      options={options}
+                    />
+                  </div>
+                  
+                )
+              })
+            }
+            <div>
+              <span>Handicraft</span>
+              <Select
+                onChange={this.selectHandicraftLevel}
+                value={this.state.handicraftLevel}
+                placeholder="Extends the weapon sharpness gauge. However, it will not increase the gauge past its maximum."
+                options={[1,2,3,4,5].map(x => ({ value: x, label: x }))}
+              />
+            </div>
           </div>
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', marginTop: 5 }}>
             <CalculateButton onClick={this.calculateAndReplace} disabled={this.state.selectedWeapons.length === 0}>Calculate and replace</CalculateButton>
             <CalculateButton onClick={this.calculateAndAdd} disabled={this.state.selectedWeapons.length === 0}>Calculate and add</CalculateButton>
           </div>
         </SelectorDiv>
-        <div style={{ padding: 15 }}>
+        <div style={{ padding: 15, maxWidth: 1000 }}>
           <DisplayTable
             data={this.state.calculatedWeapons}
           />

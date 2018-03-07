@@ -29,7 +29,8 @@ export default function DisplayTable(props) {
         {
             Header: 'Sharpness',
             accessor: 'sharpness',
-            Cell: props => <SharpnessBar data={props.value}/>
+            Cell: props => <SharpnessBar data={props.value}/>,
+            width: 100
         },
         {
             Header: 'Skills',
@@ -45,6 +46,7 @@ export default function DisplayTable(props) {
                     desc: true
                 }
             ]}
+            className="-striped"
             columns={columns}
             data={props.data}
             SubComponent={row => {
