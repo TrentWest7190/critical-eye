@@ -10,7 +10,7 @@ import buildSkillString from './helpers/buildSkillString'
 import calculate from './helpers/calculate'
 
 const CalculateButton = styled.button`
-  width: 80%;
+  width: 300px;
   height: 100px;
   margin: 0 10%;
 `
@@ -33,7 +33,8 @@ class App extends Component {
       { value: 5, label: 'White' }
     ]
     this.skills = dbhelper.allSkills()
-    this.calculate = this.calculate.bind(this)
+    this.calculateAndReplace = this.calculateAndReplace.bind(this)
+    this.calculateAndAdd = this.calculateAndAdd.bind(this)
     this.updateSkill = this.updateSkill.bind(this)
     this.selectWeaponClass = this.selectWeaponClass.bind(this)
     this.selectSharpnessLevel = this.selectSharpnessLevel.bind(this)
@@ -136,7 +137,29 @@ class App extends Component {
     }
   }
 
-  calculate() {
+  calculateAndAdd() {
+    const augments = Object.values(this.state.augments).filter(Boolean).reduce((a,v,i) => {
+      if (v === 'attack') {
+        a['augment'+i] = { value: { attack: 5 } }
+      } else if (v === 'affinity') {
+        a['augment'+i] = { value: { affinity: 5 } }
+      }
+      return a
+    }, {})
+    const skillsAndAugments = {
+      ...this.state.skills,
+      ...augments
+    }
+    const results = calculate(skillsAndAugments, this.state.selectedWeapons, this.state.selectedSharpnessLevel, this.state.handicraftLevel)
+    this.setState((prevState, props) => {
+      return {
+        prevState,
+        calculatedWeapons: this.state.calculatedWeapons.concat(results)
+      }
+    })
+  }
+
+  calculateAndReplace() {
     const augments = Object.values(this.state.augments).filter(Boolean).reduce((a,v,i) => {
       if (v === 'attack') {
         a['augment'+i] = { value: { attack: 5 } }
@@ -233,7 +256,10 @@ class App extends Component {
               options={[1,2,3,4,5].map(x => ({ value: x, label: x }))}
             />
           </div>
-          <CalculateButton onClick={this.calculate} disabled={this.state.selectedWeapons.length === 0}>Calculate!</CalculateButton>
+          <div style={{ display: 'flex' }}>
+            <CalculateButton onClick={this.calculateAndReplace} disabled={this.state.selectedWeapons.length === 0}>Calculate and replace</CalculateButton>
+            <CalculateButton onClick={this.calculateAndAdd} disabled={this.state.selectedWeapons.length === 0}>Calculate and add</CalculateButton>
+          </div>
         </div>
         <div style={{ padding: 15 }}>
           <DisplayTable
