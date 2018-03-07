@@ -3,3 +3,7 @@
   grid-template-columns: 1fr 1fr;
   padding: 15px;
 }
+
+.Select.aug {
+  width: 33.333%
+}

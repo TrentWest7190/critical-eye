@@ -2,8 +2,8 @@ import { BigNumber } from 'bignumber.js'
 import dbhelper from './dbhelper'
 
 export default function calculate(skills, weaponArray, minimumSharpness, handicraftLevel) {
+  console.log(skills)
   const sharpnesses = ["red", "orange", "yellow", "green", "blue", "white"]
-  const skillsArray = Object.values(skills).filter(Boolean).map(x => x.value)
 
   const returnWeapons = weaponArray.map(weapon => {
     const sharpness_data = dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)

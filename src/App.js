@@ -39,6 +39,7 @@ class App extends Component {
     this.selectSharpnessLevel = this.selectSharpnessLevel.bind(this)
     this.selectHandicraftLevel = this.selectHandicraftLevel.bind(this)
     this.handleSingleWeaponToggle = this.handleSingleWeaponToggle.bind(this)
+    this.updateAugment = this.updateAugment.bind(this)
     this.state = {
       selectedSharpnessLevel: 5,
       selectedWeaponClass: null,
@@ -47,7 +48,26 @@ class App extends Component {
       },
       selectedWeapons: [],
       calculatedWeapons: [],
-      singleWeapon: false
+      singleWeapon: false,
+      augments: {
+        0: null,
+        1: null,
+        2: null
+      }
+    }
+  }
+
+  updateAugment(index) {
+    return (selectedValue) => {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          augments: {
+            ...prevState.augments,
+            [index]: selectedValue && selectedValue.value
+          }
+        }
+      })
     }
   }
 
@@ -79,14 +99,24 @@ class App extends Component {
   }
 
   selectWeaponClass(selectedValue) {
+    let selectedWeapons
+    if (this.state.singleWeapon) {
+      selectedWeapons = dbhelper.filterWeapons({
+        field_name: 'wep_id',
+        field_value: selectedValue && selectedValue.value
+      })
+    } else {
+      selectedWeapons = dbhelper.filterWeapons({
+        field_name: 'wep_type_id',
+        field_value: selectedValue && selectedValue.value
+      })
+    }
     this.setState((prevState, props) => {
       return {
         ...prevState,
         selectedWeaponClass: selectedValue && selectedValue.value,
-        selectedWeapons: dbhelper.filterWeapons({
-          field_name: 'wep_type_id',
-          field_value: selectedValue && selectedValue.value
-        })
+        selectedWeapons,
+        augments: { 0: null, 1: null, 2: null }
       }
     })
   }
@@ -107,7 +137,19 @@ class App extends Component {
   }
 
   calculate() {
-    const results = calculate(this.state.skills, this.state.selectedWeapons, this.state.selectedSharpnessLevel, this.state.handicraftLevel)
+    const augments = Object.values(this.state.augments).filter(Boolean).reduce((a,v,i) => {
+      if (v === 'attack') {
+        a['augment'+i] = { value: { attack: 5 } }
+      } else if (v === 'affinity') {
+        a['augment'+i] = { value: { affinity: 5 } }
+      }
+      return a
+    }, {})
+    const skillsAndAugments = {
+      ...this.state.skills,
+      ...augments
+    }
+    const results = calculate(skillsAndAugments, this.state.selectedWeapons, this.state.selectedSharpnessLevel, this.state.handicraftLevel)
     this.setState((prevState, props) => {
       return {
         prevState,
@@ -117,6 +159,29 @@ class App extends Component {
   }
 
   render() {
+    let augments
+    if (this.state.selectedWeapons[0]) {
+      let numAugs
+      const rarity = this.state.selectedWeapons[0].rarity
+      if (rarity === 8) numAugs = 1
+      if (rarity === 7) numAugs = 2
+      if (rarity === 6) numAugs = 3
+
+      augments = Array.from({ length: numAugs }, (x, i) => (
+        <Select
+          className="aug"
+          key={i}
+          value={this.state.augments[i]}
+          placeholder="Augment"
+          onChange={this.updateAugment(i)}
+          options={[
+            { value: "attack", label: "Attack Increase" },
+            { value: "affinity", label: "Affinity Increase" }
+          ]}
+        />
+      ))
+    }
+
     return (
       <div className="App">
         <div>
@@ -128,6 +193,12 @@ class App extends Component {
             onChange={this.selectWeaponClass}
             options={this.state.singleWeapon ? this.allWeapons : this.weaponTypes}
           />
+          <div style={{ display: "flex" }}>
+            {
+              this.state.singleWeapon && this.state.selectedWeapons[0] && this.state.selectedWeapons[0].final_form &&
+              augments
+            }
+          </div>
           <div style={{ marginTop: 10 }}>Minimum sharpness before sharpening</div>
           <Select
             placeholder="Minimum sharpness level"
