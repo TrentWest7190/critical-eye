@@ -10,7 +10,7 @@ import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import { red50, red900 } from 'material-ui/styles/colors'
+import { red900 } from 'material-ui/styles/colors'
 
 import ReactGA from 'react-ga'
 ReactGA.initialize('UA-77293857-3')
