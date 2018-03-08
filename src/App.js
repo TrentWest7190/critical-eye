@@ -3,10 +3,13 @@ import Select from 'react-select'
 import VirtualizedSelect from 'react-virtualized-select'
 import DisplayTable from './components/DisplayTable'
 import './App.css'
-import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card'
+import { Card, CardHeader, CardText } from 'material-ui/Card'
 import AppBar from 'material-ui/AppBar'
 import Checkbox from 'material-ui/Checkbox'
 import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
+import Dialog from 'material-ui/Dialog'
+import ActionHelp from 'material-ui/svg-icons/action/help'
 
 import styled, { css } from 'styled-components'
 import dbhelper from './helpers/dbhelper'
@@ -28,23 +31,28 @@ const FlexDiv = styled.div`
   `}
 `
 
-const CalculateButton = styled.button`
-  width: 300px;
-  height: 50px;
-  margin: 0 10%;
-`
-
-const Header = styled.h1`
-  margin-top: 5px;
-  font-size: 1.5em;
-`
-
-const SelectorDiv = styled.div`
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.4);
-`
+const WarningModal = (props) => {
+  const actions = [
+    <FlatButton
+      label="Cancel"
+      onClick={props.handleClose}
+    />,
+    <RaisedButton
+      label="Continue"
+      primary={true}
+      onClick={props.handleContinue}
+    />
+  ]
+  return (
+    <Dialog
+      title="Warning!"
+      actions={actions}
+      open={props.open}
+    >
+      This will delete everything in the table!
+    </Dialog>
+  )
+}
 
 class App extends Component {
   constructor () {
@@ -68,6 +76,9 @@ class App extends Component {
     this.selectHandicraftLevel = this.selectHandicraftLevel.bind(this)
     this.handleSingleWeaponToggle = this.handleSingleWeaponToggle.bind(this)
     this.updateAugment = this.updateAugment.bind(this)
+    this.deleteRow = this.deleteRow.bind(this)
+    this.handleContinue = this.handleContinue.bind(this)
+    this.handleClose = this.handleClose.bind(this)
     this.state = {
       selectedSharpnessLevel: null,
       selectedWeaponClass: null,
@@ -80,8 +91,38 @@ class App extends Component {
         0: null,
         1: null,
         2: null
-      }
+      },
+      warningOpen: false,
+      sharpnessModalOpen: false
     }
+  }
+
+  handleClose() {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        warningOpen: false
+      }
+    })
+  }
+
+  handleContinue() {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        warningOpen: false
+      }
+    })
+    this.calculateAndReplace()
+  }
+
+  deleteRow({index}) {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        calculatedWeapons: prevState.calculatedWeapons.filter((_,i) => index !== i)
+      }
+    })
   }
 
   updateAugment(index) {
@@ -102,6 +143,8 @@ class App extends Component {
     this.setState((prevState) => {
       return {
         ...prevState,
+        selectedWeapons: [],
+        selectedWeaponClass: null,
         singleWeapon: !prevState.singleWeapon
       }
     })
@@ -254,19 +297,37 @@ class App extends Component {
               />
               <FlexDiv spaceEvenly>
                 <VirtualizedSelect
-                  style={{width: 200}}
+                  style={{width: 250}}
                   placeholder={this.state.singleWeapon ? "Weapon" : "Weapon type"}
                   value={this.state.selectedWeaponClass}
                   onChange={this.selectWeaponClass}
                   options={this.state.singleWeapon ? this.allWeapons : this.weaponTypes}
                 />
-                <Select
-                  style={{width: 200}}
-                  placeholder="Minimum sharpness"
-                  value={this.state.selectedSharpnessLevel}
-                  onChange={this.selectSharpnessLevel}
-                  options={this.sharpnessLevels}
-                />
+                <div style={{display: 'flex'}}>
+                  <Select
+                    style={{width: 200}}
+                    placeholder="Minimum sharpness"
+                    value={this.state.selectedSharpnessLevel}
+                    onChange={this.selectSharpnessLevel}
+                    options={this.sharpnessLevels}
+                  />
+                  <ActionHelp style={{height: '100%'}} onClick={() => this.setState({sharpnessModalOpen: true})}/>
+                  <Dialog
+                    open={this.state.sharpnessModalOpen}
+                    actions={[
+                      <FlatButton
+                        label="Okay!"
+                        onClick={() => this.setState({sharpnessModalOpen: false})}
+                      />
+                    ]}
+                  >
+                    <p>This selection corresponds to the lowest level of sharpness you will allow a weapon to reach before sharpnening.</p>
+                    <p>For example, if you select Blue, the calculator will calculate the average damage over the course of going through both the White and the Blue sharpness, stopping after that.</p>
+                    <p>If a sharpness higher than the maximum sharpness for a weapon is selected, the calculator will calculate only for the highest level of sharpness.</p>
+                    <p>For example, if you select White, but a weapon's sharpness maxes out at Blue, it will only calculate the damage for the Blue section of sharpness.</p>
+                  </Dialog>
+                </div>
+                
               </FlexDiv>
               <FlexDiv center>
                 {
@@ -311,24 +372,33 @@ class App extends Component {
               </div>
             </CardText>
           </Card>
-          <div style={{ display: 'flex', marginTop: 5, justifyContent: 'space-around' }}>
+          <div style={{ display: 'flex', marginTop: 25, marginBottom: 25, justifyContent: 'space-around' }}>
             <RaisedButton
               label="Calculate and replace"
               primary={true}
-              onClick={this.calculateAndReplace}
-              disabled={this.state.selectedWeapons.length === 0 || this.state.selectedSharpnessLevel < 0}
+              onClick={() => this.setState({ warningOpen: true })}
+              disabled={this.state.selectedWeapons.length === 0 || (!this.state.selectedSharpnessLevel || this.state.selectedSharpnessLevel < 0)}
             />
             <RaisedButton
               label="Calculate and add"
               primary={true}
               onClick={this.calculateAndAdd}
-              disabled={this.state.selectedWeapons.length === 0 || this.state.selectedSharpnessLevel < 0}
+              disabled={this.state.selectedWeapons.length === 0 || (!this.state.selectedSharpnessLevel || this.state.selectedSharpnessLevel < 0)}
             />
           </div>
           <DisplayTable
             data={this.state.calculatedWeapons}
+            deleteRow={this.deleteRow}
           />
         </div>
+        <WarningModal
+          handleContinue={this.handleContinue}
+          handleClose={this.handleClose}
+          open={this.state.warningOpen}
+        />
+        <span style={{position: 'absolute', right: 0, bottom: 0}}>
+          Created by Trog. <a href="https://github.com/TrentWest7190/critical-eye">Github</a>
+        </span>
       </div>
     )
   }

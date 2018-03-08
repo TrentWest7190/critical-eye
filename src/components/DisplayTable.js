@@ -3,6 +3,8 @@ import ReactTable from 'react-table'
 import styled from 'styled-components'
 import 'react-table/react-table.css'
 import Chip from 'material-ui/Chip'
+import FlatButton from 'material-ui/FlatButton';
+import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever'
 
 export default function DisplayTable(props) {
   const columns = [
@@ -37,6 +39,11 @@ export default function DisplayTable(props) {
       Header: 'Skills',
       accessor: 'skills',
       show: false
+    },
+    {
+      Header: 'Delete',
+      Cell: p => <FlatButton icon={<ActionDeleteForever/>} onClick={() => props.deleteRow(p)}/>,
+      width: 90
     }
   ]
   return(
@@ -50,6 +57,7 @@ export default function DisplayTable(props) {
       className="-striped"
       columns={columns}
       data={props.data}
+      defaultPageSize={10}
       SubComponent={row => {
         console.log(row.row.skills)
         return (
@@ -88,17 +96,21 @@ function SharpnessBar(props) {
   )
 }
 
-const LevelDisplay = styled.span`
-  margin-right: 5px;
-`
-
 function SkillDisplay(props) {
   const skills = Object.keys(props.data).map(x => ({...props.data[x], name: x})).filter(x => x.value)
-  console.log(skills)
   return (
-    <div style={{margin: 5}}>
+    <div style={{margin: 5, display: 'flex'}}>
       {
-        skills.map(x => <Chip key={x.name} backgroundColor="rgba(0,0,0,.9)" labelColor="rgba(255,255,255,.9)">{x.name} : {x.value.level}</Chip>)
+        skills.map(x => (
+          <Chip
+            key={x.name}
+            backgroundColor="rgba(0,0,0,.9)"
+            labelColor="rgba(255,255,255,.9)"
+            style={{marginRight: 3}}
+          >
+          {x.name} : {x.name.includes('augment') ? x.value.attack ? 'Attack' : 'Affinity' : x.value.level}
+          </Chip>
+        ))
       }
     </div>
   )
