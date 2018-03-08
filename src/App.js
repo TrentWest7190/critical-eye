@@ -29,6 +29,25 @@ const FlexDiv = styled.div`
   ${props => props.center && css`
     justify-content: center;
   `}
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+const CalcButton = styled(RaisedButton)`
+  margin 5px;
+  @media(max-width: 700px) {
+    width: 100%;
+  }
+`
+
+const SkillSelectContainer = styled.div`
+  width: 30%;
+  @media(max-width: 700px) {
+    width: 100%;
+    margin: 5px;
+  }
 `
 
 const WarningModal = (props) => {
@@ -282,6 +301,7 @@ class App extends Component {
     return (
       <div className="App">
         <AppBar
+          showMenuIconButton={false}
           title="Critical Eye"
         />
         <div className="container">
@@ -321,10 +341,13 @@ class App extends Component {
                       />
                     ]}
                   >
-                    <p>This selection corresponds to the lowest level of sharpness you will allow a weapon to reach before sharpnening.</p>
-                    <p>For example, if you select Blue, the calculator will calculate the average damage over the course of going through both the White and the Blue sharpness, stopping after that.</p>
-                    <p>If a sharpness higher than the maximum sharpness for a weapon is selected, the calculator will calculate only for the highest level of sharpness.</p>
-                    <p>For example, if you select White, but a weapon's sharpness maxes out at Blue, it will only calculate the damage for the Blue section of sharpness.</p>
+                    <span>This selection corresponds to the lowest level of sharpness you will allow a weapon to reach before sharpnening.</span>
+                    <hr/>
+                    <span>For example, if you select Blue, the calculator will calculate the average damage over the course of going through both the White and the Blue sharpness, stopping after that.</span>
+                    <hr/>
+                    <span>If a sharpness higher than the maximum sharpness for a weapon is selected, the calculator will calculate only for the highest level of sharpness.</span>
+                    <hr/>
+                    <span>For example, if you select White, but a weapon's sharpness maxes out at Blue, it will only calculate the damage for the Blue section of sharpness.</span>
                   </Dialog>
                 </div>
                 
@@ -348,7 +371,7 @@ class App extends Component {
                 this.skills.map((skill) => {
                   const options = skill.values.map(x => ({ value: x, label: buildSkillString(x) }))
                   return (
-                    <div key={skill.skill_id} style={{width: '30%'}}>
+                    <SkillSelectContainer key={skill.skill_id}>
                       <span>{skill.name}</span>
                       <Select
                         onChange={this.updateSkill(skill.name)}
@@ -356,12 +379,12 @@ class App extends Component {
                         placeholder={skill.description}
                         options={options}
                       />
-                    </div>
+                    </SkillSelectContainer>
                     
                   )
                 })
               }
-              <div style={{width: '30%'}}>
+              <SkillSelectContainer>
                 <span>Handicraft</span>
                 <Select
                   onChange={this.selectHandicraftLevel}
@@ -369,24 +392,25 @@ class App extends Component {
                   placeholder="Extends the weapon sharpness gauge. However, it will not increase the gauge past its maximum."
                   options={[1,2,3,4,5].map(x => ({ value: x, label: x }))}
                 />
-              </div>
+              </SkillSelectContainer>
             </CardText>
           </Card>
-          <div style={{ display: 'flex', marginTop: 25, marginBottom: 25, justifyContent: 'space-around' }}>
-            <RaisedButton
+          <FlexDiv>
+            <CalcButton
               label="Calculate and replace"
               primary={true}
               onClick={() => this.setState({ warningOpen: true })}
               disabled={this.state.selectedWeapons.length === 0 || (!this.state.selectedSharpnessLevel || this.state.selectedSharpnessLevel < 0)}
             />
-            <RaisedButton
+            <CalcButton
               label="Calculate and add"
               primary={true}
               onClick={this.calculateAndAdd}
               disabled={this.state.selectedWeapons.length === 0 || (!this.state.selectedSharpnessLevel || this.state.selectedSharpnessLevel < 0)}
             />
-          </div>
+          </FlexDiv>
           <DisplayTable
+            style={{marginBottom: 30}}
             data={this.state.calculatedWeapons}
             deleteRow={this.deleteRow}
           />
@@ -396,7 +420,7 @@ class App extends Component {
           handleClose={this.handleClose}
           open={this.state.warningOpen}
         />
-        <span style={{position: 'absolute', right: 0, bottom: 0}}>
+        <span style={{position: 'fixed', right: 0, bottom: 0}}>
           Created by Trog. <a href="https://github.com/TrentWest7190/critical-eye">Github</a>
         </span>
       </div>

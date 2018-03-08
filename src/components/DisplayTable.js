@@ -18,16 +18,16 @@ export default function DisplayTable(props) {
       accessor: 'name',
     },
     {
+      Header: 'Final Attack',
+      accessor: 'calculatedAttack'
+    },
+    {
       Header: 'True Attack',
       accessor: 'true_attack'
     },
     {
       Header: 'Affinity',
       accessor: 'affinity'
-    },
-    {
-      Header: 'Final Attack',
-      accessor: 'calculatedAttack'
     },
     {
       Header: 'Sharpness',
@@ -58,6 +58,7 @@ export default function DisplayTable(props) {
       columns={columns}
       data={props.data}
       defaultPageSize={10}
+      style={{marginBottom: 30}}
       SubComponent={row => {
         console.log(row.row.skills)
         return (
