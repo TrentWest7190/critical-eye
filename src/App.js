@@ -305,7 +305,7 @@ class App extends Component {
           title="Critical Eye"
         />
         <div className="container">
-          <Card>
+          <Card style={{marginTop: 10, marginBottom: 10}}>
             <DarkenedCardHeader
               title="Select your weapon"
             />
