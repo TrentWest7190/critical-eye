@@ -31,12 +31,13 @@ const FlexDiv = styled.div`
   `}
   @media (max-width: 700px) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-items: center;
   }
 `
 
 const CalcButton = styled(RaisedButton)`
-  margin 5px;
+  margin: 5px;
   @media(max-width: 700px) {
     width: 100%;
   }
@@ -84,8 +85,8 @@ class App extends Component {
       { value: 2, label: 'Yellow' },
       { value: 3, label: 'Green' },
       { value: 4, label: 'Blue' },
-      { value: 5, label: 'White' }
-    ]
+      { value: 5, label: 'White / Use Max Sharpness' }
+    ].reverse()
     this.skills = dbhelper.allSkills()
     this.calculateAndReplace = this.calculateAndReplace.bind(this)
     this.calculateAndAdd = this.calculateAndAdd.bind(this)
@@ -112,7 +113,8 @@ class App extends Component {
         2: null
       },
       warningOpen: false,
-      sharpnessModalOpen: false
+      sharpnessModalOpen: false,
+      disableSharpnessDropdown: false
     }
   }
 
@@ -189,23 +191,17 @@ class App extends Component {
 
   selectWeaponClass(selectedValue) {
     let selectedWeapons
-    if (this.state.singleWeapon) {
-      selectedWeapons = dbhelper.filterWeapons({
-        field_name: 'wep_id',
-        field_value: selectedValue && selectedValue.value
-      })
-    } else {
-      selectedWeapons = dbhelper.filterWeapons({
-        field_name: 'wep_type_id',
-        field_value: selectedValue && selectedValue.value
-      })
-    }
+    selectedWeapons = dbhelper.filterWeapons({
+      field_name: this.state.singleWeapon ? 'wep_id' : 'wep_type_id',
+      field_value: selectedValue && selectedValue.value
+    })
     this.setState((prevState, props) => {
       return {
         ...prevState,
         selectedWeaponClass: selectedValue && selectedValue.value,
         selectedWeapons,
-        augments: { 0: null, 1: null, 2: null }
+        augments: { 0: null, 1: null, 2: null },
+        disableSharpnessDropdown: selectedWeapons.some(x => dbhelper.weaponIsRanged(x.wep_id))
       }
     })
   }
@@ -256,7 +252,11 @@ class App extends Component {
       if (v === 'attack') {
         a['augment'+i] = { value: { attack: 5 } }
       } else if (v === 'affinity') {
-        a['augment'+i] = { value: { affinity: 5 } }
+        if (Object.keys(a).find(x => a[x].value.affinity)) {
+          a['augment'+i] = { value: { affinity: 5 }}
+        } else {
+          a['augment'+i] = { value: { affinity: 10 } }
+        }
       }
       return a
     }, {})
@@ -323,13 +323,14 @@ class App extends Component {
                   onChange={this.selectWeaponClass}
                   options={this.state.singleWeapon ? this.allWeapons : this.weaponTypes}
                 />
-                <div style={{display: 'flex'}}>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                   <Select
-                    style={{width: 200}}
+                    style={{width: 250}}
                     placeholder="Minimum sharpness"
                     value={this.state.selectedSharpnessLevel}
                     onChange={this.selectSharpnessLevel}
                     options={this.sharpnessLevels}
+                    disabled={this.state.disableSharpnessDropdown}
                   />
                   <ActionHelp style={{height: '100%'}} onClick={() => this.setState({sharpnessModalOpen: true})}/>
                   <Dialog
@@ -400,13 +401,13 @@ class App extends Component {
               label="Calculate and replace"
               primary={true}
               onClick={() => this.setState({ warningOpen: true })}
-              disabled={this.state.selectedWeapons.length === 0 || (!this.state.selectedSharpnessLevel || this.state.selectedSharpnessLevel < 0)}
+              disabled={this.state.selectedWeapons.length === 0 || (!this.state.disableSharpnessDropdown && !this.state.selectedSharpnessLevel || this.state.selectedSharpnessLevel < 0)}
             />
             <CalcButton
               label="Calculate and add"
               primary={true}
               onClick={this.calculateAndAdd}
-              disabled={this.state.selectedWeapons.length === 0 || (!this.state.selectedSharpnessLevel || this.state.selectedSharpnessLevel < 0)}
+              disabled={this.state.selectedWeapons.length === 0 || (!this.state.disableSharpnessDropdown && !this.state.selectedSharpnessLevel || this.state.selectedSharpnessLevel < 0)}
             />
           </FlexDiv>
           <DisplayTable

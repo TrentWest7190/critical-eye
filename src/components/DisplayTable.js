@@ -5,35 +5,74 @@ import 'react-table/react-table.css'
 import Chip from 'material-ui/Chip'
 import FlatButton from 'material-ui/FlatButton';
 import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever'
+import * as icons from '../icons'
 
 export default function DisplayTable(props) {
   const columns = [
     {
       Header: 'Type',
       accessor: 'weapon_type',
-      minWidth: 75
+      maxWidth: 45,
+      Cell: p => <img src={icons[p.value.replace(/ /g, '').replace('&', 'And')]} style={{ width: 30, height: 30 }}/>,
     },
     {
       Header: 'Name',
       accessor: 'name',
+      style: {
+        textAlign: 'left'
+      }
     },
     {
       Header: 'Final Attack',
-      accessor: 'calculatedAttack'
+      accessor: 'calculatedAttack',
+      maxWidth: 100
     },
     {
       Header: 'True Attack',
-      accessor: 'true_attack'
+      accessor: 'true_attack',
+      maxWidth: 100
     },
     {
-      Header: 'Affinity',
-      accessor: 'affinity'
+      Header: 'Total Attack',
+      accessor: 'totalAttack',
+      maxWidth: 120
+    },
+    {
+      Header: 'Base Affinity',
+      accessor: 'affinity',
+      maxWidth: 100
+    },
+    {
+      Header: 'Total Affinity',
+      accessor: 'totalAffinity',
+      maxWidth: 120
     },
     {
       Header: 'Sharpness',
       accessor: 'sharpness',
-      Cell: props => <SharpnessBar data={props.value}/>,
-      width: 100
+      Cell: props => {
+        if (props.row.isRanged) {
+          return (<span>N/A</span>)
+        }
+        return (<SharpnessBar data={props.value}/>)
+      },
+      width: 110,
+      sortable: false
+    },
+    {
+      Header: 'Hits Before Sharpen',
+      accessor: 'totalHits',
+      Cell: props => {
+        if (props.row.isRanged) {
+          return (<span>N/A</span>)
+        }
+        return (<span>{props.value}</span>)
+      },
+    },
+    {
+      Header: 'Min Sharpness',
+      accessor: 'minimumSharpness',
+      show: false
     },
     {
       Header: 'Skills',
@@ -41,9 +80,14 @@ export default function DisplayTable(props) {
       show: false
     },
     {
-      Header: 'Delete',
-      Cell: p => <FlatButton icon={<ActionDeleteForever/>} onClick={() => props.deleteRow(p)}/>,
-      width: 90
+      Header: 'Is Ranged',
+      accessor: 'isRanged',
+      show: false
+    },
+    {
+      Header: '',
+      Cell: p => <ActionDeleteForever color="red" style={{ cursor: 'pointer' }} onClick={() => props.deleteRow(p)}/>,
+      width: 35
     }
   ]
   return(
@@ -54,6 +98,11 @@ export default function DisplayTable(props) {
           desc: true
         }
       ]}
+      getTdProps={() => ({
+        style: {
+          textAlign: 'center'
+        }
+      })}
       className="-striped"
       columns={columns}
       data={props.data}
@@ -62,7 +111,7 @@ export default function DisplayTable(props) {
       SubComponent={row => {
         console.log(row.row.skills)
         return (
-          <SkillDisplay data={row.row.skills}></SkillDisplay>
+          <SkillDisplay data={row.row.skills} minSharpness={row.row.minimumSharpness}></SkillDisplay>
         )
       }}
     />
@@ -98,7 +147,14 @@ function SharpnessBar(props) {
 }
 
 function SkillDisplay(props) {
-  const skills = Object.keys(props.data).map(x => ({...props.data[x], name: x})).filter(x => x.value)
+  const skills = Object.keys(props.data).map(x => ({...props.data[x], name: x})).filter(x => x.value).concat([
+    {
+      name: 'Minimum Sharpness',
+      value: {
+        level: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'White'][props.minSharpness]
+      }
+    }
+  ])
   return (
     <div style={{margin: 5, display: 'flex'}}>
       {

@@ -5,24 +5,29 @@ export default {
       return db.weapons.find((wep) => wep.wep_id === wep_id)
   },
 
+  weaponIsRanged(wep_id) {
+    const rangedWeapons = [ 12, 13, 14 ]
+    return rangedWeapons.includes(this.weapon(wep_id).wep_type_id)
+  },
+
   allWeapons() {
-      return db.weapons
+    return db.weapons
   },
 
   filterWeapons(filter) {
-      return db.weapons.filter((wep) => wep[filter.field_name] === filter.field_value)
+    return db.weapons.filter((wep) => wep[filter.field_name] === filter.field_value)
   },
 
   weaponTypeDefs() {
-      return db.weaponTypeDefs
+    return db.weaponTypeDefs
   },
 
   skill(skill_id) {
-      return db.skills.find((skill) => skill.skill_id === skill_id)
+    return db.skills.find((skill) => skill.skill_id === skill_id)
   },
 
   allSkills() {
-      return db.skills
+    return db.skills
   },
 
   getSharpnessMultiplier(sharpnessName) {

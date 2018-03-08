@@ -5,7 +5,7 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
   const sharpnesses = ["red", "orange", "yellow", "green", "blue", "white"]
 
   const returnWeapons = weaponArray.map(weapon => {
-    const isRanged = getIsRanged(weapon.wep_type_id)
+    const isRanged = dbhelper.weaponIsRanged(weapon.wep_id)
     const sharpness_data = isRanged ? {} : dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
     const maxSharpnessValue = getMaxSharpnessValue(sharpness_data)
     const isElemental = (weapon.status_value && !weapon.needs_awakening) || (weapon.element_value && !weapon.needs_awakening)
@@ -50,7 +50,12 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
       calculatedAttack: Math.round(new BigNumber(damageCount).div(isRanged ? 1 : sharpnessValue).toNumber()),
       sharpness: sharpness_data,
       weapon_type: weapon.weapon_type,
-      skills: skills
+      skills: skills,
+      totalAffinity,
+      totalAttack,
+      minimumSharpness: sharpnessIndex,
+      totalHits: sharpnessValue,
+      isRanged
     }
   })
 
@@ -83,11 +88,6 @@ function getTotalAttackMultipliers(skillsArray) {
 function getCritMultiplier(critBoost, totalAffinity) {
   const critRate = new BigNumber(totalAffinity).div(100)
   return new BigNumber(critBoost).times(critRate).plus(1).toNumber()
-}
-
-function getIsRanged(wep_type_id) {
-  const rangedWeapons = [ 12, 13, 14 ]
-  return rangedWeapons.includes(wep_type_id)
 }
 
 function getMaxSharpnessValue(sharpness_data) {
