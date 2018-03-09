@@ -1,0 +1,4381 @@
+[
+  {
+    "name": "Anjanath",
+    "monster_id": 1,
+    "hitzone_data": [
+      {
+        "Part": "Nose",
+        "Sever": "80",
+        "Blunt": "75",
+        "Shot": "90",
+        "Fire": "0",
+        "Water": "30",
+        "Thunder": "15",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head",
+        "Sever": "70",
+        "Blunt": "70",
+        "Shot": "65",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "10",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings",
+        "Sever": "80",
+        "Blunt": "45",
+        "Shot": "90",
+        "Fire": "0",
+        "Water": "30",
+        "Thunder": "15",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "45",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "10",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg (Wounded)",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "50",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "10",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg (Wounded)",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "50",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "75",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Apceros",
+    "monster_id": 2,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "60",
+        "Fire": "40",
+        "Water": "25",
+        "Thunder": "40",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "60",
+        "Fire": "40",
+        "Water": "25",
+        "Thunder": "40",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Aptonoth",
+    "monster_id": 3,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "100",
+        "Fire": "40",
+        "Water": "20",
+        "Thunder": "30",
+        "Ice": "20",
+        "Dragon": "15",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "70",
+        "Blunt": "70",
+        "Shot": "100",
+        "Fire": "40",
+        "Water": "20",
+        "Thunder": "30",
+        "Ice": "20",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Azure Rathalos",
+    "monster_id": 4,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "60",
+        "Blunt": "65",
+        "Shot": "55",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "15",
+        "Ice": "20",
+        "Dragon": "30",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "30",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "22",
+        "Blunt": "22",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "22",
+        "Blunt": "22",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "25",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Barnos",
+    "monster_id": 5,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "45",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "50",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "45",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "50",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Barroth",
+    "monster_id": 6,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "22",
+        "Blunt": "25",
+        "Shot": "10",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Mud)",
+        "Sever": "20",
+        "Blunt": "24",
+        "Shot": "9",
+        "Fire": "0",
+        "Water": "80",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "46",
+        "Blunt": "46",
+        "Shot": "50",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body (Mud)",
+        "Sever": "24",
+        "Blunt": "24",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "80",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forearms",
+        "Sever": "80",
+        "Blunt": "85",
+        "Shot": "75",
+        "Fire": "30",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forearms (Mud)",
+        "Sever": "35",
+        "Blunt": "38",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "80",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg",
+        "Sever": "40",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg (Mud)",
+        "Sever": "24",
+        "Blunt": "24",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "80",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg",
+        "Sever": "40",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg (Mud)",
+        "Sever": "24",
+        "Blunt": "24",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "80",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "40",
+        "Fire": "25",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail (Mud)",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "22",
+        "Fire": "0",
+        "Water": "80",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Bazelgeuse",
+    "monster_id": 7,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "80",
+        "Blunt": "85",
+        "Shot": "60",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "25",
+        "Ice": "20",
+        "Dragon": "20",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Legs",
+        "Sever": "36",
+        "Blunt": "34",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "65",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "75",
+        "Blunt": "70",
+        "Shot": "55",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "20",
+        "Ice": "15",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Black Diablos",
+    "monster_id": 8,
+    "hitzone_data": [
+      {
+        "Part": "Horn",
+        "Sever": "19",
+        "Blunt": "37",
+        "Shot": "15",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "25",
+        "Dragon": "0",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head",
+        "Sever": "43",
+        "Blunt": "55",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "30",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "5",
+        "Ice": "20",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Stomach",
+        "Sever": "63",
+        "Blunt": "68",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "30",
+        "Thunder": "10",
+        "Ice": "35",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "24",
+        "Blunt": "42",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "25",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "40",
+        "Blunt": "30",
+        "Shot": "60",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "30",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "40",
+        "Blunt": "30",
+        "Shot": "60",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "30",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "45",
+        "Blunt": "24",
+        "Shot": "45",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip",
+        "Sever": "20",
+        "Blunt": "24",
+        "Shot": "10",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "25",
+        "Dragon": "0",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Diablos",
+    "monster_id": 9,
+    "hitzone_data": [
+      {
+        "Part": "Horn",
+        "Sever": "21",
+        "Blunt": "42",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "25",
+        "Dragon": "20",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head",
+        "Sever": "45",
+        "Blunt": "63",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "30",
+        "Dragon": "25",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "5",
+        "Ice": "20",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Stomach",
+        "Sever": "73",
+        "Blunt": "78",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "30",
+        "Thunder": "10",
+        "Ice": "35",
+        "Dragon": "30",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "24",
+        "Blunt": "42",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "25",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "40",
+        "Blunt": "30",
+        "Shot": "60",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "30",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "40",
+        "Blunt": "30",
+        "Shot": "60",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "30",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "50",
+        "Blunt": "24",
+        "Shot": "45",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip",
+        "Sever": "23",
+        "Blunt": "33",
+        "Shot": "10",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "25",
+        "Dragon": "20",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Dodogama",
+    "monster_id": 10,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "30",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Rock 1)",
+        "Sever": "75",
+        "Blunt": "75",
+        "Shot": "65",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "30",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Rock 2)",
+        "Sever": "100",
+        "Blunt": "100",
+        "Shot": "90",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "30",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "25",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck (Rock 1)",
+        "Sever": "65",
+        "Blunt": "65",
+        "Shot": "55",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "25",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck (Rock 2)",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "80",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "25",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forelegs",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Hindlegs",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "50",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Gajalaka",
+    "monster_id": 11,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "80",
+        "Blunt": "90",
+        "Shot": "90",
+        "Fire": "35",
+        "Water": "30",
+        "Thunder": "50",
+        "Ice": "40",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "45",
+        "Blunt": "65",
+        "Shot": "70",
+        "Fire": "35",
+        "Water": "30",
+        "Thunder": "50",
+        "Ice": "40",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Gajau",
+    "monster_id": 12,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "80",
+        "Fire": "40",
+        "Water": "10",
+        "Thunder": "40",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "70",
+        "Blunt": "70",
+        "Shot": "70",
+        "Fire": "40",
+        "Water": "10",
+        "Thunder": "40",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Gastodon",
+    "monster_id": 13,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "25",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "65",
+        "Blunt": "65",
+        "Shot": "65",
+        "Fire": "10",
+        "Water": "25",
+        "Thunder": "40",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Girros",
+    "monster_id": 14,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "90",
+        "Fire": "50",
+        "Water": "5",
+        "Thunder": "30",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "80",
+        "Fire": "40",
+        "Water": "0",
+        "Thunder": "20",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Great Girros",
+    "monster_id": 15,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "80",
+        "Blunt": "85",
+        "Shot": "75",
+        "Fire": "15",
+        "Water": "30",
+        "Thunder": "0",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "40",
+        "Blunt": "45",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Foreleg",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "10",
+        "Water": "25",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Foreleg",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "10",
+        "Water": "25",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "5",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Great Jagras",
+    "monster_id": 16,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "80",
+        "Blunt": "85",
+        "Shot": "75",
+        "Fire": "30",
+        "Water": "0",
+        "Thunder": "20",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "65",
+        "Blunt": "70",
+        "Shot": "60",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Stomach (Inflated)",
+        "Sever": "90",
+        "Blunt": "95",
+        "Shot": "85",
+        "Fire": "30",
+        "Water": "0",
+        "Thunder": "20",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Foreleg",
+        "Sever": "65",
+        "Blunt": "60",
+        "Shot": "55",
+        "Fire": "25",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Foreleg",
+        "Sever": "65",
+        "Blunt": "60",
+        "Shot": "55",
+        "Fire": "25",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Grimalkyne",
+    "monster_id": 17,
+    "hitzone_data": []
+  },
+  {
+    "name": "Hornetaur",
+    "monster_id": 18,
+    "hitzone_data": [
+      {
+        "Part": "Body",
+        "Sever": "80",
+        "Blunt": "100",
+        "Shot": "80",
+        "Fire": "100",
+        "Water": "20",
+        "Thunder": "60",
+        "Ice": "100",
+        "Dragon": "10",
+        "Stun": "100"
+      }
+    ]
+  },
+  {
+    "name": "Jagras",
+    "monster_id": 19,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "90",
+        "Fire": "50",
+        "Water": "5",
+        "Thunder": "30",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "80",
+        "Fire": "40",
+        "Water": "0",
+        "Thunder": "20",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Jyuratodus",
+    "monster_id": 20,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "63",
+        "Blunt": "63",
+        "Shot": "63",
+        "Fire": "5",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Mud)",
+        "Sever": "50",
+        "Blunt": "50",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "43",
+        "Blunt": "43",
+        "Shot": "43",
+        "Fire": "5",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "10",
+        "Water": "0",
+        "Thunder": "25",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body (Mud)",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "25",
+        "Fire": "5",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Fin",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "25",
+        "Fire": "10",
+        "Water": "0",
+        "Thunder": "20",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "30",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg (Mud)",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "30",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg (Mud)",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "5",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail (Mud)",
+        "Sever": "50",
+        "Blunt": "50",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Kelbi",
+    "monster_id": 21,
+    "hitzone_data": [
+      {
+        "Part": "Horn",
+        "Sever": "85",
+        "Blunt": "85",
+        "Shot": "80",
+        "Fire": "80",
+        "Water": "80",
+        "Thunder": "80",
+        "Ice": "80",
+        "Dragon": "0",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head / Body",
+        "Sever": "85",
+        "Blunt": "85",
+        "Shot": "80",
+        "Fire": "80",
+        "Water": "80",
+        "Thunder": "80",
+        "Ice": "80",
+        "Dragon": "0",
+        "Stun": "100"
+      }
+    ]
+  },
+  {
+    "name": "Kestodon",
+    "monster_id": 22,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "25",
+        "Water": "40",
+        "Thunder": "25",
+        "Ice": "40",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "80",
+        "Fire": "25",
+        "Water": "40",
+        "Thunder": "25",
+        "Ice": "40",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Kirin",
+    "monster_id": 23,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "55",
+        "Blunt": "55",
+        "Shot": "45",
+        "Fire": "25",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "20",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "31",
+        "Blunt": "31",
+        "Shot": "22",
+        "Fire": "20",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body (Electricity)",
+        "Sever": "20",
+        "Blunt": "20",
+        "Shot": "10",
+        "Fire": "15",
+        "Water": "10",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Lower Body",
+        "Sever": "29",
+        "Blunt": "29",
+        "Shot": "20",
+        "Fire": "20",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Lower Body (Electricity)",
+        "Sever": "20",
+        "Blunt": "20",
+        "Shot": "10",
+        "Fire": "15",
+        "Water": "10",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Kulu-Ya-Ku",
+    "monster_id": 24,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "85",
+        "Blunt": "85",
+        "Shot": "75",
+        "Fire": "15",
+        "Water": "20",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "15",
+        "Stun": "100"
+      },
+      {
+        "Part": "Forearms",
+        "Sever": "65",
+        "Blunt": "70",
+        "Shot": "55",
+        "Fire": "15",
+        "Water": "20",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "15",
+        "Water": "2",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "35",
+        "Fire": "15",
+        "Water": "20",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Rock",
+        "Sever": "5",
+        "Blunt": "5",
+        "Shot": "5",
+        "Fire": "5",
+        "Water": "20",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Kushala Daora",
+    "monster_id": 25,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "40",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "35",
+        "Blunt": "50",
+        "Shot": "25",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "20",
+        "Blunt": "25",
+        "Shot": "30",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forelegs",
+        "Sever": "45",
+        "Blunt": "50",
+        "Shot": "30",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Hindlegs",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings",
+        "Sever": "20",
+        "Blunt": "15",
+        "Shot": "20",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "35",
+        "Blunt": "30",
+        "Shot": "55",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Lavasioth",
+    "monster_id": 26,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "15",
+        "Blunt": "20",
+        "Shot": "15",
+        "Fire": "50",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Wounded)",
+        "Sever": "35",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "35",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "15",
+        "Blunt": "15",
+        "Shot": "15",
+        "Fire": "10",
+        "Water": "10",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "10",
+        "Water": "10",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "20",
+        "Blunt": "20",
+        "Shot": "20",
+        "Fire": "10",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back (Wounded)",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "30",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Fins",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "30",
+        "Fire": "10",
+        "Water": "10",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Legs",
+        "Sever": "15",
+        "Blunt": "15",
+        "Shot": "15",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Legs (Wounded)",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "30",
+        "Fire": "5",
+        "Water": "25",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "20",
+        "Blunt": "15",
+        "Shot": "20",
+        "Fire": "10",
+        "Water": "10",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Legiana",
+    "monster_id": 27,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "65",
+        "Blunt": "70",
+        "Shot": "60",
+        "Fire": "20",
+        "Water": "15",
+        "Thunder": "25",
+        "Ice": "0",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "35",
+        "Blunt": "40",
+        "Shot": "30",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "15",
+        "Water": "10",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "15",
+        "Water": "10",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "5",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "5",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Mernos",
+    "monster_id": 28,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "80",
+        "Fire": "25",
+        "Water": "25",
+        "Thunder": "25",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "80",
+        "Fire": "25",
+        "Water": "25",
+        "Thunder": "25",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Mosswine",
+    "monster_id": 29,
+    "hitzone_data": [
+      {
+        "Part": "Body",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "85",
+        "Fire": "100",
+        "Water": "100",
+        "Thunder": "100",
+        "Ice": "100",
+        "Dragon": "0",
+        "Stun": "100"
+      }
+    ]
+  },
+  {
+    "name": "Nergigante",
+    "monster_id": 30,
+    "hitzone_data": [
+      {
+        "Part": "Horn",
+        "Sever": "20",
+        "Blunt": "25",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Horn (Wounded)",
+        "Sever": "35",
+        "Blunt": "40",
+        "Shot": "45",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head",
+        "Sever": "45",
+        "Blunt": "60",
+        "Shot": "40",
+        "Fire": "5",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (White)",
+        "Sever": "75",
+        "Blunt": "90",
+        "Shot": "70",
+        "Fire": "5",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Black)",
+        "Sever": "20",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "5",
+        "Water": "10",
+        "Thunder": "20",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Gloss Black)",
+        "Sever": "20",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "5",
+        "Water": "10",
+        "Thunder": "20",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "35",
+        "Blunt": "30",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "30",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forearms",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "5",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forearms (White)",
+        "Sever": "70",
+        "Blunt": "60",
+        "Shot": "55",
+        "Fire": "5",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forearms (Black)",
+        "Sever": "10",
+        "Blunt": "15",
+        "Shot": "10",
+        "Fire": "5",
+        "Water": "5",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forearms (Gloss Black)",
+        "Sever": "10",
+        "Blunt": "15",
+        "Shot": "10",
+        "Fire": "5",
+        "Water": "5",
+        "Thunder": "20",
+        "Ice": "0",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Hindlegs",
+        "Sever": "35",
+        "Blunt": "30",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings",
+        "Sever": "40",
+        "Blunt": "30",
+        "Shot": "30",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings (White)",
+        "Sever": "55",
+        "Blunt": "45",
+        "Shot": "45",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings (Black)",
+        "Sever": "28",
+        "Blunt": "25",
+        "Shot": "25",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings (Gloss Black)",
+        "Sever": "28",
+        "Blunt": "25",
+        "Shot": "25",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "60",
+        "Blunt": "45",
+        "Shot": "25",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip",
+        "Sever": "45",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "15",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip (White)",
+        "Sever": "65",
+        "Blunt": "55",
+        "Shot": "40",
+        "Fire": "15",
+        "Water": "5",
+        "Thunder": "15",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip (Black)",
+        "Sever": "25",
+        "Blunt": "20",
+        "Shot": "10",
+        "Fire": "15",
+        "Water": "5",
+        "Thunder": "20",
+        "Ice": "5",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip (Gloss Black)",
+        "Sever": "25",
+        "Blunt": "20",
+        "Shot": "10",
+        "Fire": "15",
+        "Water": "5",
+        "Thunder": "20",
+        "Ice": "5",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Noios",
+    "monster_id": 31,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "80",
+        "Fire": "10",
+        "Water": "25",
+        "Thunder": "25",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "80",
+        "Fire": "10",
+        "Water": "25",
+        "Thunder": "25",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Odogaron",
+    "monster_id": 32,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "70",
+        "Blunt": "75",
+        "Shot": "65",
+        "Fire": "10",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "30",
+        "Dragon": "0",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "40",
+        "Blunt": "45",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "20",
+        "Dragon": "0",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Foreleg",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "5",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "25",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Foreleg",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "5",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "25",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "25",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "25",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "20",
+        "Dragon": "0",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Paolumu",
+    "monster_id": 33,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "55",
+        "Blunt": "55",
+        "Shot": "45",
+        "Fire": "25",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "30",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck Pouch",
+        "Sever": "75",
+        "Blunt": "75",
+        "Shot": "60",
+        "Fire": "25",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "46",
+        "Blunt": "46",
+        "Shot": "42",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "40",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "40",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "45",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "45",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "20",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Pink Rathian",
+    "monster_id": 34,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "60",
+        "Blunt": "65",
+        "Shot": "55",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "15",
+        "Dragon": "30",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "30",
+        "Blunt": "35",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "22",
+        "Blunt": "22",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "22",
+        "Blunt": "22",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "20",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Pukei-Pukei",
+    "monster_id": 35,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "75",
+        "Blunt": "80",
+        "Shot": "70",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "30",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Tongue",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "75",
+        "Fire": "15",
+        "Water": "0",
+        "Thunder": "25",
+        "Ice": "15",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "40",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "5",
+        "Water": "0",
+        "Thunder": "20",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "10",
+        "Water": "0",
+        "Thunder": "25",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "10",
+        "Water": "0",
+        "Thunder": "25",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "15",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "10",
+        "Water": "0",
+        "Thunder": "25",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Radobaan",
+    "monster_id": 36,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "80",
+        "Blunt": "90",
+        "Shot": "50",
+        "Fire": "20",
+        "Water": "20",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "30",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head Bone",
+        "Sever": "24",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "10",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "45",
+        "Blunt": "50",
+        "Shot": "30",
+        "Fire": "10",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back Bone",
+        "Sever": "20",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg",
+        "Sever": "55",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "10",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg Bone",
+        "Sever": "20",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg",
+        "Sever": "55",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "10",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg Bone",
+        "Sever": "20",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "45",
+        "Blunt": "30",
+        "Shot": "30",
+        "Fire": "15",
+        "Water": "15",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Raphinos",
+    "monster_id": 37,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "90",
+        "Fire": "50",
+        "Water": "50",
+        "Thunder": "100",
+        "Ice": "50",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "90",
+        "Fire": "50",
+        "Water": "50",
+        "Thunder": "100",
+        "Ice": "50",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Rathalos",
+    "monster_id": 38,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "65",
+        "Blunt": "70",
+        "Shot": "60",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "15",
+        "Dragon": "30",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "35",
+        "Blunt": "40",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Rathian",
+    "monster_id": 39,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "70",
+        "Blunt": "75",
+        "Shot": "65",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "15",
+        "Dragon": "30",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "40",
+        "Blunt": "45",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "35",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "35",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Wing",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Wing",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "15",
+        "Ice": "10",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Leg",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Leg",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "5",
+        "Ice": "0",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "0",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "5",
+        "Dragon": "20",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Shamos",
+    "monster_id": 40,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "80",
+        "Fire": "40",
+        "Water": "25",
+        "Thunder": "40",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Body",
+        "Sever": "70",
+        "Blunt": "70",
+        "Shot": "70",
+        "Fire": "40",
+        "Water": "25",
+        "Thunder": "40",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Teostra",
+    "monster_id": 41,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "55",
+        "Blunt": "60",
+        "Shot": "50",
+        "Fire": "0",
+        "Water": "30",
+        "Thunder": "10",
+        "Ice": "25",
+        "Dragon": "10",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "33",
+        "Blunt": "38",
+        "Shot": "33",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "20",
+        "Blunt": "20",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "20",
+        "Blunt": "20",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forelegs",
+        "Sever": "38",
+        "Blunt": "38",
+        "Shot": "33",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Hindlegs",
+        "Sever": "30",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings",
+        "Sever": "40",
+        "Blunt": "35",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "38",
+        "Blunt": "33",
+        "Shot": "28",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "5",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Tobi-Kadachi",
+    "monster_id": 42,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "50",
+        "Fire": "10",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "50",
+        "Fire": "10",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "50"
+      },
+      {
+        "Part": "Body",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "35",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "45",
+        "Blunt": "45",
+        "Shot": "60",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Foreleg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "15",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Foreleg",
+        "Sever": "35",
+        "Blunt": "35",
+        "Shot": "15",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "10",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "10",
+        "Fire": "5",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "5",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "70",
+        "Fire": "20",
+        "Water": "30",
+        "Thunder": "0",
+        "Ice": "20",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Tzitzi-Ya-Ku",
+    "monster_id": 43,
+    "hitzone_data": [
+      {
+        "Part": "Antennae",
+        "Sever": "75",
+        "Blunt": "65",
+        "Shot": "70",
+        "Fire": "15",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "15",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head",
+        "Sever": "65",
+        "Blunt": "55",
+        "Shot": "55",
+        "Fire": "15",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "15",
+        "Stun": "100"
+      },
+      {
+        "Part": "Forearms",
+        "Sever": "45",
+        "Blunt": "60",
+        "Shot": "35",
+        "Fire": "15",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "45",
+        "Blunt": "60",
+        "Shot": "35",
+        "Fire": "15",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "15",
+        "Water": "15",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Uragaan",
+    "monster_id": 44,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "70",
+        "Blunt": "80",
+        "Shot": "50",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "15",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "100"
+      },
+      {
+        "Part": "Jaw",
+        "Sever": "19",
+        "Blunt": "20",
+        "Shot": "10",
+        "Fire": "0",
+        "Water": "40",
+        "Thunder": "5",
+        "Ice": "20",
+        "Dragon": "30",
+        "Stun": "100"
+      },
+      {
+        "Part": "Jaw (Wounded)",
+        "Sever": "55",
+        "Blunt": "60",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "100"
+      },
+      {
+        "Part": "Upper Neck",
+        "Sever": "22",
+        "Blunt": "24",
+        "Shot": "10",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Lower Neck",
+        "Sever": "25",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "45",
+        "Fire": "0",
+        "Water": "30",
+        "Thunder": "5",
+        "Ice": "15",
+        "Dragon": "30",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "22",
+        "Blunt": "24",
+        "Shot": "10",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forearms",
+        "Sever": "25",
+        "Blunt": "30",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Hindlegs",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "0",
+        "Water": "15",
+        "Thunder": "0",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Vaal Hazak",
+    "monster_id": 45,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "50",
+        "Blunt": "40",
+        "Shot": "50",
+        "Fire": "25",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Wounded)",
+        "Sever": "70",
+        "Blunt": "80",
+        "Shot": "60",
+        "Fire": "25",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "25",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "70",
+        "Blunt": "80",
+        "Shot": "60",
+        "Fire": "25",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Chest",
+        "Sever": "50",
+        "Blunt": "45",
+        "Shot": "45",
+        "Fire": "15",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Stomach",
+        "Sever": "50",
+        "Blunt": "40",
+        "Shot": "45",
+        "Fire": "2",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Stomach (Wounded)",
+        "Sever": "60",
+        "Blunt": "70",
+        "Shot": "40",
+        "Fire": "25",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back",
+        "Sever": "45",
+        "Blunt": "35",
+        "Shot": "35",
+        "Fire": "20",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Back (Wounded)",
+        "Sever": "55",
+        "Blunt": "65",
+        "Shot": "40",
+        "Fire": "25",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Hindlegs",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "5",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forelegs",
+        "Sever": "45",
+        "Blunt": "40",
+        "Shot": "35",
+        "Fire": "20",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "5",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forelegs (Wounded)",
+        "Sever": "55",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "20",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings",
+        "Sever": "24",
+        "Blunt": "23",
+        "Shot": "30",
+        "Fire": "15",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip",
+        "Sever": "35",
+        "Blunt": "30",
+        "Shot": "30",
+        "Fire": "20",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip",
+        "Sever": "60",
+        "Blunt": "30",
+        "Shot": "50",
+        "Fire": "20",
+        "Water": "5",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "0",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Vespoid",
+    "monster_id": 46,
+    "hitzone_data": [
+      {
+        "Part": "Body",
+        "Sever": "85",
+        "Blunt": "85",
+        "Shot": "85",
+        "Fire": "100",
+        "Water": "50",
+        "Thunder": "100",
+        "Ice": "50",
+        "Dragon": "0",
+        "Stun": "100"
+      }
+    ]
+  },
+  {
+    "name": "Xeno'jiiva",
+    "monster_id": 47,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "70",
+        "Blunt": "70",
+        "Shot": "55",
+        "Fire": "20",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Wounded)",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "60",
+        "Fire": "20",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "100"
+      },
+      {
+        "Part": "Head (Critical State)",
+        "Sever": "80",
+        "Blunt": "100",
+        "Shot": "60",
+        "Fire": "15",
+        "Water": "30",
+        "Thunder": "30",
+        "Ice": "30",
+        "Dragon": "15",
+        "Stun": "100"
+      },
+      {
+        "Part": "Neck",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "15",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Neck (Critical State)",
+        "Sever": "50",
+        "Blunt": "50",
+        "Shot": "30",
+        "Fire": "15",
+        "Water": "30",
+        "Thunder": "30",
+        "Ice": "30",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "25",
+        "Fire": "15",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body (Critical State)",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "40",
+        "Fire": "15",
+        "Water": "30",
+        "Thunder": "30",
+        "Ice": "30",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Chest",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "30",
+        "Fire": "20",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Chest (Critical State)",
+        "Sever": "100",
+        "Blunt": "80",
+        "Shot": "70",
+        "Fire": "15",
+        "Water": "30",
+        "Thunder": "30",
+        "Ice": "30",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forelegs",
+        "Sever": "50",
+        "Blunt": "50",
+        "Shot": "45",
+        "Fire": "20",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forelegs (Wounded)",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "50",
+        "Fire": "20",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Forelegs (Critical State)",
+        "Sever": "70",
+        "Blunt": "90",
+        "Shot": "60",
+        "Fire": "15",
+        "Water": "30",
+        "Thunder": "30",
+        "Ice": "30",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Hindlegs",
+        "Sever": "22",
+        "Blunt": "22",
+        "Shot": "15",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Hindlegs (Critical State)",
+        "Sever": "50",
+        "Blunt": "50",
+        "Shot": "40",
+        "Fire": "10",
+        "Water": "20",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings",
+        "Sever": "50",
+        "Blunt": "50",
+        "Shot": "30",
+        "Fire": "15",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings (Wounded)",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "40",
+        "Fire": "15",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Wings (Critical State)",
+        "Sever": "100",
+        "Blunt": "80",
+        "Shot": "50",
+        "Fire": "15",
+        "Water": "30",
+        "Thunder": "30",
+        "Ice": "30",
+        "Dragon": "15",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "15",
+        "Fire": "10",
+        "Water": "5",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail (Critical State)",
+        "Sever": "50",
+        "Blunt": "50",
+        "Shot": "30",
+        "Fire": "10",
+        "Water": "20",
+        "Thunder": "20",
+        "Ice": "20",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip",
+        "Sever": "70",
+        "Blunt": "70",
+        "Shot": "45",
+        "Fire": "20",
+        "Water": "10",
+        "Thunder": "10",
+        "Ice": "10",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail Tip (Critical State)",
+        "Sever": "90",
+        "Blunt": "90",
+        "Shot": "60",
+        "Fire": "15",
+        "Water": "30",
+        "Thunder": "30",
+        "Ice": "30",
+        "Dragon": "15",
+        "Stun": "0"
+      }
+    ]
+  },
+  {
+    "name": "Zorah Magdaros",
+    "monster_id": 48,
+    "hitzone_data": [
+      {
+        "Part": "Head",
+        "Sever": "40",
+        "Blunt": "40",
+        "Shot": "40",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Body",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Chest (Before Wounded)",
+        "Sever": "50",
+        "Blunt": "50",
+        "Shot": "30",
+        "Fire": "0",
+        "Water": "25",
+        "Thunder": "10",
+        "Ice": "20",
+        "Dragon": "25",
+        "Stun": "0"
+      },
+      {
+        "Part": "Chest (After Wounded)",
+        "Sever": "80",
+        "Blunt": "80",
+        "Shot": "80",
+        "Fire": "0",
+        "Water": "30",
+        "Thunder": "15",
+        "Ice": "25",
+        "Dragon": "30",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Foreleg",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Foreleg",
+        "Sever": "30",
+        "Blunt": "30",
+        "Shot": "25",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Hindleg",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Hindleg",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Tail",
+        "Sever": "25",
+        "Blunt": "25",
+        "Shot": "20",
+        "Fire": "0",
+        "Water": "10",
+        "Thunder": "5",
+        "Ice": "5",
+        "Dragon": "10",
+        "Stun": "0"
+      },
+      {
+        "Part": "Shell",
+        "Sever": "1",
+        "Blunt": "1",
+        "Shot": "1",
+        "Fire": "0",
+        "Water": "0",
+        "Thunder": "0",
+        "Ice": "0",
+        "Dragon": "0",
+        "Stun": "0"
+      },
+      {
+        "Part": "Exhaust Organ (Crater)",
+        "Sever": "95",
+        "Blunt": "95",
+        "Shot": "90",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Exhaust Organ (Head)",
+        "Sever": "95",
+        "Blunt": "95",
+        "Shot": "90",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Exhaust Organ (Central)",
+        "Sever": "95",
+        "Blunt": "95",
+        "Shot": "90",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Exhaust Organ (Rear)",
+        "Sever": "95",
+        "Blunt": "95",
+        "Shot": "90",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "0",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Left Weak Shell",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "50",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      },
+      {
+        "Part": "Right Weak Shell",
+        "Sever": "60",
+        "Blunt": "60",
+        "Shot": "50",
+        "Fire": "0",
+        "Water": "20",
+        "Thunder": "10",
+        "Ice": "15",
+        "Dragon": "20",
+        "Stun": "0"
+      }
+    ]
+  }
+]
