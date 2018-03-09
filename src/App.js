@@ -228,7 +228,11 @@ class App extends Component {
       if (v === 'attack') {
         a['augment'+i] = { value: { attack: 5 } }
       } else if (v === 'affinity') {
-        a['augment'+i] = { value: { affinity: 5 } }
+        if (Object.keys(a).find(x => a[x].value.affinity)) {
+          a['augment'+i] = { value: { affinity: 5 }}
+        } else {
+          a['augment'+i] = { value: { affinity: 10 } }
+        }
       }
       return a
     }, {})
