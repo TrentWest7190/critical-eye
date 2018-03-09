@@ -400,6 +400,18 @@ class App extends Component {
               </SkillSelectContainer>
             </CardText>
           </Card>
+          <Card expandable={true} expanded={this.state.expanded}>
+            <DarkenedCardHeader
+              title="Select your monster (optional)"
+              actAsExpander={true}
+              showExpandableButton={true}
+            />
+            <CardText expandable={true} style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignContent: 'space-around'}}>
+              <Select
+                
+              />
+            </CardText>
+          </Card>
           <FlexDiv>
             <CalcButton
               label="Calculate and replace"
