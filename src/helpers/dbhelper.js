@@ -7,7 +7,8 @@ export default {
 
   weaponIsRanged(wep_id) {
     const rangedWeapons = [ 12, 13, 14 ]
-    return rangedWeapons.includes(this.weapon(wep_id).wep_type_id)
+    const weapon = this.weapon(wep_id)
+    return weapon && rangedWeapons.includes(weapon.wep_type_id)
   },
 
   allWeapons() {

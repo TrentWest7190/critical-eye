@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'mobx-react'
+import { Store } from './store'
 import './index.css';
 import App from './App';
 
@@ -22,4 +24,11 @@ const muiTheme = getMuiTheme({
   }
 })
 
-ReactDOM.render(<MuiThemeProvider muiTheme={muiTheme}><App/></MuiThemeProvider>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={new Store()}>
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <App/>
+    </MuiThemeProvider>
+  </Provider>, 
+  document.getElementById('root')
+);

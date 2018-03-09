@@ -1,0 +1,6 @@
+{
+    "prettier.semi": false,
+    "prettier.eslintIntegration": true,
+    "prettier.singleQuote": true,
+    "editor.tabSize": 2
+}

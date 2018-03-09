@@ -3,7 +3,6 @@ import ReactTable from 'react-table'
 import styled from 'styled-components'
 import 'react-table/react-table.css'
 import Chip from 'material-ui/Chip'
-import FlatButton from 'material-ui/FlatButton';
 import ActionDeleteForever from 'material-ui/svg-icons/action/delete-forever'
 import * as icons from '../icons'
 
