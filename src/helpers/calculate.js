@@ -15,7 +15,7 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
         return !isElemental
       }
       return true
-    }).map(x => skills[x].value)
+    }).map(x => skills[x])
     const totalAttackMultiplier = getTotalAttackMultipliers(skillsArray)
     const totalAttackMod = getTotalAttackMod(skillsArray)
     const totalAttack = getTotalAttack(weapon.true_attack, totalAttackMultiplier, totalAttackMod)

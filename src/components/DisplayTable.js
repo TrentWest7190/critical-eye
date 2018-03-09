@@ -146,12 +146,10 @@ function SharpnessBar(props) {
 }
 
 function SkillDisplay(props) {
-  const skills = Object.keys(props.data).map(x => ({...props.data[x], name: x})).filter(x => x.value).concat([
+  const skills = Object.keys(props.data).map(x => ({...props.data[x], name: x})).concat([
     {
       name: 'Minimum Sharpness',
-      value: {
-        level: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'White'][props.minSharpness]
-      }
+      level: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'White'][props.minSharpness]
     }
   ])
   return (
@@ -164,7 +162,7 @@ function SkillDisplay(props) {
             labelColor="rgba(255,255,255,.9)"
             style={{marginRight: 3}}
           >
-          {x.name} : {x.name.includes('augment') ? x.value.attack ? 'Attack' : 'Affinity' : x.value.level}
+          {x.name} : {x.name.includes('augment') ? x.attack ? 'Attack' : 'Affinity' : x.level}
           </Chip>
         ))
       }

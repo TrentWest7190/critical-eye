@@ -44,7 +44,7 @@ export default class CalculatorStore {
   @action.bound
   calculate() {
     const skillsAndAugments = {
-      ...this.rootStore.skills.skills.toJS(),
+      ...this.rootStore.skills.getSkillData,
       ...this.augmentsAsSkillData
     }
     const selectedWeapons = this.rootStore.UI.singleWeapon

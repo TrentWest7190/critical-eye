@@ -1,5 +1,7 @@
 import { observable, action, computed } from 'mobx'
 
+const savedSkills = localStorage.getItem('savedSkills')
+
 export default class UIStore {
   @observable warningOpen = false
   @observable singleWeaponSelectValue = null
@@ -7,7 +9,7 @@ export default class UIStore {
   @observable singleWeapon = false
   @observable sharpnessSelectValue = null
   @observable sharpnessModalOpen = false
-  @observable skillSelectValues = new Map()
+  @observable skillSelectValues = savedSkills ? new Map(Object.entries(JSON.parse(savedSkills))) : new Map()
 
   constructor(rootStore) {
     this.rootStore = rootStore
