@@ -14,7 +14,6 @@ import Dialog from 'material-ui/Dialog'
 import ActionHelp from 'material-ui/svg-icons/action/help'
 
 import styled, { css } from 'styled-components'
-import dbhelper from './helpers/dbhelper'
 import buildSkillString from './helpers/buildSkillString'
 import calculate from './helpers/calculate'
 
@@ -77,27 +76,15 @@ const WarningModal = props => {
 class App extends Component {
   constructor() {
     super()
-    this.skills = dbhelper.allSkills()
-    this.calculateAndReplace = this.calculateAndReplace.bind(this)
-    this.calculateAndAdd = this.calculateAndAdd.bind(this)
-    this.updateSkill = this.updateSkill.bind(this)
-    this.selectHandicraftLevel = this.selectHandicraftLevel.bind(this)
     this.deleteRow = this.deleteRow.bind(this)
-    this.state = {
-      handicraftLevel: 0,
-      skills: localStorage.getItem('savedSkills')
-        ? JSON.parse(localStorage.getItem('savedSkills'))
-        : {},
-      calculatedWeapons: localStorage.getItem('savedWeapons')
-        ? JSON.parse(localStorage.getItem('savedWeapons'))
-        : [],
-    }
+    this.state = {}
   }
 
   componentWillMount() {
     this.UIStore = this.props.store.UI
     this.WeaponStore = this.props.store.weapons
     this.CalculatorStore = this.props.store.calculator
+    this.SkillsStore = this.props.store.skills
   }
 
   deleteRow({ index }) {
@@ -111,118 +98,44 @@ class App extends Component {
     })
   }
 
-  selectHandicraftLevel(selectedValue) {
-    this.setState((prevState, props) => {
-      return {
-        ...prevState,
-        handicraftLevel: selectedValue ? selectedValue.value : 0
-      }
-    })
-  }
-
-  updateSkill(skillName) {
-    return selectedValue => {
-      console.log(skillName, selectedValue)
-      this.setState((prevState, props) => {
-        const newSkills = {
-          ...prevState.skills,
-          [skillName]: selectedValue
-        }
-        localStorage.setItem('savedSkills', JSON.stringify(newSkills))
-        return {
-          ...prevState,
-          skills: newSkills
-        }
-      })
-    }
-  }
-
-  calculateAndAdd() {
-    const augments = Object.values(this.state.augments)
-      .filter(Boolean)
-      .reduce((a, v, i) => {
-        if (v === 'attack') {
-          a['augment' + i] = { value: { attack: 5 } }
-        } else if (v === 'affinity') {
-          if (Object.keys(a).find(x => a[x].value.affinity)) {
-            a['augment' + i] = { value: { affinity: 5 } }
-          } else {
-            a['augment' + i] = { value: { affinity: 10 } }
-          }
-        }
-        return a
-      }, {})
-    const skillsAndAugments = {
-      ...this.state.skills,
-      ...augments
-    }
-    const results = calculate(
-      skillsAndAugments,
-      this.state.selectedWeapons,
-      this.state.selectedSharpnessLevel,
-      this.state.handicraftLevel
-    )
-    this.setState((prevState, props) => {
-      const newWeapons = this.state.calculatedWeapons.concat(results)
-      localStorage.setItem('savedWeapons', JSON.stringify(newWeapons))
-      return {
-        prevState,
-        calculatedWeapons: newWeapons
-      }
-    })
-  }
-
-  calculateAndReplace() {
-    const augments = Object.values(this.state.augments)
-      .filter(Boolean)
-      .reduce((a, v, i) => {
-        if (v === 'attack') {
-          a['augment' + i] = { value: { attack: 5 } }
-        } else if (v === 'affinity') {
-          if (Object.keys(a).find(x => a[x].value.affinity)) {
-            a['augment' + i] = { value: { affinity: 5 } }
-          } else {
-            a['augment' + i] = { value: { affinity: 10 } }
-          }
-        }
-        return a
-      }, {})
-    const skillsAndAugments = {
-      ...this.state.skills,
-      ...augments
-    }
-    const results = calculate(
-      skillsAndAugments,
-      this.state.selectedWeapons,
-      this.state.selectedSharpnessLevel,
-      this.state.handicraftLevel
-    )
-    this.setState((prevState, props) => {
-      localStorage.setItem('savedWeapons', JSON.stringify(results))
-      return {
-        prevState,
-        calculatedWeapons: results
-      }
-    })
-  }
-
   render() {
     let augments
     if (this.UIStore.showAugmentSelects) {
-      augments = Array.from({ length: this.WeaponStore.getNumberOfAugments }, (x, i) => (
-        <Select
-          style={{ width: 150 }}
-          key={i}
-          value={this.CalculatorStore.augments[i]}
-          placeholder="Augment"
-          onChange={this.CalculatorStore.updateAugment(i)}
-          options={[
-            { value: 'attack', label: 'Attack Increase' },
-            { value: 'affinity', label: 'Affinity Increase' }
-          ]}
-        />
-      ))
+      augments = Array.from(
+        { length: this.WeaponStore.getNumberOfAugments },
+        (x, i) => (
+          <Select
+            style={{ width: 150 }}
+            key={i}
+            value={this.CalculatorStore.augments[i]}
+            placeholder="Augment"
+            onChange={this.CalculatorStore.updateAugment(i)}
+            options={[
+              { value: 'attack', label: 'Attack Increase' },
+              { value: 'affinity', label: 'Affinity Increase' }
+            ]}
+          />
+        )
+      )
     }
+
+    const skills = this.SkillsStore.skillData.map(skill => {
+      const options = skill.values.map(x => ({
+        value: x.level,
+        label: buildSkillString(x)
+      }))
+      return (
+        <SkillSelectContainer key={skill.skill_id}>
+          <span>{skill.name}</span>
+          <Select
+            onChange={this.UIStore.updateSkill(skill.name)}
+            value={this.UIStore.skillSelectValues.get(skill.name)}
+            placeholder={skill.description}
+            options={options}
+          />
+        </SkillSelectContainer>
+      )
+    })
 
     return (
       <div className="App">
@@ -262,13 +175,11 @@ class App extends Component {
                   />
                   <SharpnessDialog
                     open={this.UIStore.sharpnessModalOpen}
-                    close={() => this.UIStore.sharpnessModalOpen = false}
+                    close={() => (this.UIStore.sharpnessModalOpen = false)}
                   />
                 </div>
               </FlexDiv>
-              <FlexDiv center>
-                {augments}
-              </FlexDiv>
+              <FlexDiv center>{augments}</FlexDiv>
             </div>
           </Card>
           <Card expandable={true} expanded={this.state.expanded}>
@@ -286,30 +197,18 @@ class App extends Component {
                 alignContent: 'space-around'
               }}
             >
-              {this.skills.map(skill => {
-                const options = skill.values.map(x => ({
-                  value: x,
-                  label: buildSkillString(x)
-                }))
-                return (
-                  <SkillSelectContainer key={skill.skill_id}>
-                    <span>{skill.name}</span>
-                    <Select
-                      onChange={this.updateSkill(skill.name)}
-                      value={this.state.skills[skill.name]}
-                      placeholder={skill.description}
-                      options={options}
-                    />
-                  </SkillSelectContainer>
-                )
-              })}
+              {skills}
               <SkillSelectContainer>
                 <span>Handicraft</span>
                 <Select
-                  onChange={this.selectHandicraftLevel}
-                  value={this.state.handicraftLevel}
+                  onChange={this.SkillsStore.selectHandicraftLevel}
+                  value={this.SkillsStore.handicraftLevel}
+                  resetValue={0}
                   placeholder="Extends the weapon sharpness gauge. However, it will not increase the gauge past its maximum."
-                  options={[1, 2, 3, 4, 5].map(x => ({ value: x, label: x }))}
+                  options={[1, 2, 3, 4, 5].map(x => ({
+                    value: x,
+                    label: `Level ${x}: Sharpness +${x * 10}`
+                  }))}
                 />
               </SkillSelectContainer>
             </CardText>
@@ -336,24 +235,26 @@ class App extends Component {
             <CalcButton
               label="Calculate"
               primary={true}
-              onClick={this.calculateAndAdd}
+              onClick={this.CalculatorStore.calculate}
+              disabled={this.UIStore.disableCalculateButton}
             />
             <CalcButton
               label="Clear Table"
               primary={true}
               onClick={() => this.UIStore.toggleWarning()}
+              disabled={this.CalculatorStore.results.length === 0}
             />
           </FlexDiv>
           <DisplayTable
             style={{ marginBottom: 30 }}
-            data={this.state.calculatedWeapons}
+            data={this.CalculatorStore.results.peek()}
             deleteRow={this.deleteRow}
           />
         </div>
         <WarningModal
           handleContinue={() => {
             this.UIStore.toggleWarning()
-            this.calculateAndReplace()
+            this.CalculatorStore.results = []
           }}
           handleClose={() => this.UIStore.toggleWarning()}
           open={this.UIStore.warningOpen}

@@ -1,5 +1,4 @@
 import { observable, action, computed } from 'mobx'
-import dbhelper from '../helpers/dbhelper'
 
 export default class UIStore {
   @observable warningOpen = false
@@ -8,9 +7,21 @@ export default class UIStore {
   @observable singleWeapon = false
   @observable sharpnessSelectValue = null
   @observable sharpnessModalOpen = false
+  @observable skillSelectValues = new Map()
 
   constructor(rootStore) {
     this.rootStore = rootStore
+  }
+
+  @computed
+  get disableCalculateButton() {
+    const sharpnessDisabled = this.disableSharpnessDropdown
+    const weaponSelectValue = this.singleWeapon ? this.singleWeaponSelectValue : this.weaponTypeSelectValue
+      if (sharpnessDisabled) {
+        return !weaponSelectValue
+      } else {
+        return !weaponSelectValue || !this.sharpnessSelectValue
+      }
   }
 
   @computed
@@ -71,5 +82,13 @@ export default class UIStore {
   @action.bound
   selectSharpness(selectedValue) {
     this.sharpnessSelectValue = selectedValue && selectedValue.value
+  }
+
+  @action.bound
+  updateSkill(skillName) {
+    return selectedValue => {
+      this.skillSelectValues.set(skillName, selectedValue && selectedValue.value)
+      localStorage.setItem('savedSkills', JSON.stringify(this.skillSelectValues.toJS()))
+    }
   }
 }

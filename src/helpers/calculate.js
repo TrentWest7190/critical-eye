@@ -5,6 +5,7 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
   const sharpnesses = ["red", "orange", "yellow", "green", "blue", "white"]
 
   const returnWeapons = weaponArray.map(weapon => {
+    console.log(skills)
     const isRanged = dbhelper.weaponIsRanged(weapon.wep_id)
     const sharpness_data = isRanged ? {} : dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
     const maxSharpnessValue = getMaxSharpnessValue(sharpness_data)
