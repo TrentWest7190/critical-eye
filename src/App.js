@@ -4,7 +4,7 @@ import VirtualizedSelect from 'react-virtualized-select'
 import { observer, inject } from 'mobx-react'
 import DisplayTable from './components/DisplayTable'
 import SharpnessDialog from './components/SharpnessDialog'
-import MonsterTable from './components/MonsterTable'
+//import MonsterTable from './components/MonsterTable'
 import './App.css'
 import { Card, CardHeader, CardText } from 'material-ui/Card'
 import AppBar from 'material-ui/AppBar'
@@ -111,7 +111,7 @@ class App extends Component {
     const skills = this.SkillsStore.skillData.map(skill => {
       const options = skill.values.map(x => ({
         value: x.level,
-        label: buildSkillString(x)
+        label: x.desc || buildSkillString(x)
       }))
       return (
         <SkillSelectContainer key={skill.skill_id}>
@@ -128,9 +128,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <button onClick={() => this.props.store.changeTestVal(100)}>
-          clicky
-        </button>
         <AppBar showMenuIconButton={false} title="Critical Eye" />
         <div className="container">
           <Card style={{ marginTop: 10, marginBottom: 10 }}>
@@ -202,7 +199,7 @@ class App extends Component {
               </SkillSelectContainer>
             </CardText>
           </Card>
-          <Card expandable={true} expanded={this.state.expanded}>
+{/*           <Card expandable={true} expanded={this.state.expanded}>
             <DarkenedCardHeader
               title="Select your monster"
               actAsExpander={true}
@@ -222,7 +219,7 @@ class App extends Component {
                 }
               />
             </CardText>
-          </Card>
+          </Card> */}
           <FlexDiv>
             <CalcButton
               label="Calculate"

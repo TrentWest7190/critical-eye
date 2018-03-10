@@ -14,6 +14,7 @@ export default function DisplayTable(props) {
       maxWidth: 45,
       Cell: p => (
         <img
+          alt={[p.value]}
           src={icons[p.value.replace(/ /g, '').replace('&', 'And')]}
           style={{ width: 30, height: 30 }}
         />

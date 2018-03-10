@@ -270,5 +270,101 @@
       }
     ],
     "skill_id": 11
+  },
+  {
+    "name": "Might",
+    "description": "Temporarily strengthens your attacks when ingested by improving energy flow.",
+    "levels": 2,
+    "values": [
+      {
+        "attack": 10,
+        "level": 1,
+        "desc": "Might Seed: +10 Attack (3min)"
+      },
+      {
+        "attack": 25,
+        "level": 2,
+        "desc": "Might Pill: +25 Attack (20sec)"
+      }
+    ],
+    "skill_id": 12
+  },
+  {
+    "name": "Demondrug",
+    "description": "Boosts your attack power by filling you with - guess what? - demonic strength.",
+    "levels": 2,
+    "values": [
+      {
+        "attack": 7,
+        "level": 1,
+        "desc": "Demondrug: +7 Attack (Until death)"
+      },
+      {
+        "attack": 10,
+        "level": 2,
+        "desc": "Mega Demondrug: +10 Attack (Until death)"
+      }
+    ],
+    "skill_id": 13
+  },
+  {
+    "name": "Meal",
+    "description": "Meat at the canteen",
+    "levels": 3,
+    "values": [
+      {
+        "attack": 5,
+        "level": 1,
+        "desc": "Attack Up S: +5 Attack (Until death)"
+      },
+      {
+        "attack": 10,
+        "level": 2,
+        "desc": "Attack Up M: +10 Attack (Until death)"
+      },
+      {
+        "attack": 15,
+        "level": 3,
+        "desc": "Attack Up L: +15 Attack (Until death)"
+      }
+    ],
+    "skill_id": 14
+  },
+  {
+    "name": "Demon Powder",
+    "description": "A mysterious powder that produces a cloud around the area that temporarily strengthens attacks.",
+    "levels": 1,
+    "values": [
+      {
+        "attack": 10,
+        "level": 1,
+        "desc": "+10 Attack (3min)"
+      }
+    ],
+    "skill_id": 15
+  },
+  {
+    "name": "Powercharm",
+    "description": "An amulet that strengthens attacks. Just carrying this gives you demonic strength.",
+    "levels": 1,
+    "values": [
+      {
+        "attack": 6,
+        "level": 1
+      }
+    ],
+    "skill_id": 16
+  },
+  {
+    "name": "Powertalon",
+    "description": "A charm that strengthens attacks. Its effects are amplified by the dragon parts it contains.",
+    "levels": 1,
+    "values": [
+      {
+        "attack": 9,
+        "level": 1
+      }
+    ],
+    "skill_id": 17
   }
 ]
