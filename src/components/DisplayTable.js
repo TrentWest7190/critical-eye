@@ -12,7 +12,12 @@ export default function DisplayTable(props) {
       Header: 'Type',
       accessor: 'weapon_type',
       maxWidth: 45,
-      Cell: p => <img src={icons[p.value.replace(/ /g, '').replace('&', 'And')]} style={{ width: 30, height: 30 }}/>,
+      Cell: p => (
+        <img
+          src={icons[p.value.replace(/ /g, '').replace('&', 'And')]}
+          style={{ width: 30, height: 30 }}
+        />
+      )
     },
     {
       Header: 'Name',
@@ -51,9 +56,9 @@ export default function DisplayTable(props) {
       accessor: 'sharpness',
       Cell: props => {
         if (props.row.isRanged) {
-          return (<span>N/A</span>)
+          return <span>N/A</span>
         }
-        return (<SharpnessBar data={props.value}/>)
+        return <SharpnessBar data={props.value} />
       },
       width: 110,
       sortable: false
@@ -63,10 +68,10 @@ export default function DisplayTable(props) {
       accessor: 'totalHits',
       Cell: props => {
         if (props.row.isRanged) {
-          return (<span>N/A</span>)
+          return <span>N/A</span>
         }
-        return (<span>{props.value}</span>)
-      },
+        return <span>{props.value}</span>
+      }
     },
     {
       Header: 'Min Sharpness',
@@ -85,11 +90,17 @@ export default function DisplayTable(props) {
     },
     {
       Header: '',
-      Cell: p => <ActionDeleteForever color="red" style={{ cursor: 'pointer' }} onClick={() => props.deleteRow(p)}/>,
+      Cell: p => (
+        <ActionDeleteForever
+          color="red"
+          style={{ cursor: 'pointer' }}
+          onClick={() => props.deleteRow(p.index)}
+        />
+      ),
       width: 35
     }
   ]
-  return(
+  return (
     <ReactTable
       defaultSorted={[
         {
@@ -106,11 +117,16 @@ export default function DisplayTable(props) {
       columns={columns}
       data={props.data}
       defaultPageSize={10}
-      style={{marginBottom: 30}}
+      style={{ marginBottom: 30 }}
       SubComponent={row => {
         console.log(row.row.skills)
         return (
-          <SkillDisplay data={row.row.skills} minSharpness={row.row.minimumSharpness}></SkillDisplay>
+          <div>
+            <SkillDisplay
+              data={row.row.skills}
+              minSharpness={row.row.minimumSharpness}
+            />
+          </div>
         )
       }}
     />
@@ -132,40 +148,45 @@ function SharpnessBar(props) {
     yellow: props.data.yellow,
     green: props.data.green,
     blue: props.data.blue,
-    white: props.data.white,
+    white: props.data.white
   }
   return (
     <FlexBar>
-      {
-        Object.keys(sharp).map((x) => {
-          return (<div key={x} style={{ width: sharp[x] * .25, backgroundColor: x }}></div>)
-        })
-      }
+      {Object.keys(sharp).map(x => {
+        return (
+          <div key={x} style={{ width: sharp[x] * 0.25, backgroundColor: x }} />
+        )
+      })}
     </FlexBar>
   )
 }
 
 function SkillDisplay(props) {
-  const skills = Object.keys(props.data).map(x => ({...props.data[x], name: x})).concat([
-    {
-      name: 'Minimum Sharpness',
-      level: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'White'][props.minSharpness]
-    }
-  ])
-  return (
-    <div style={{margin: 5, display: 'flex'}}>
+  const skills = Object.keys(props.data)
+    .map(x => ({ ...props.data[x], name: x }))
+    .concat([
       {
-        skills.map(x => (
-          <Chip
-            key={x.name}
-            backgroundColor="rgba(0,0,0,.9)"
-            labelColor="rgba(255,255,255,.9)"
-            style={{marginRight: 3}}
-          >
-          {x.name} : {x.name.includes('augment') ? x.attack ? 'Attack' : 'Affinity' : x.level}
-          </Chip>
-        ))
+        name: 'Minimum Sharpness',
+        level: ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'White'][
+          props.minSharpness
+        ]
       }
+    ])
+  return (
+    <div style={{ margin: 5, display: 'flex' }}>
+      {skills.map(x => (
+        <Chip
+          key={x.name}
+          backgroundColor="rgba(0,0,0,.9)"
+          labelColor="rgba(255,255,255,.9)"
+          style={{ marginRight: 3 }}
+        >
+          {x.name} :{' '}
+          {x.name.includes('augment')
+            ? x.attack ? 'Attack' : 'Affinity'
+            : x.level}
+        </Chip>
+      ))}
     </div>
   )
 }

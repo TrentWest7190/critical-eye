@@ -4,6 +4,7 @@ import VirtualizedSelect from 'react-virtualized-select'
 import { observer, inject } from 'mobx-react'
 import DisplayTable from './components/DisplayTable'
 import SharpnessDialog from './components/SharpnessDialog'
+import MonsterTable from './components/MonsterTable'
 import './App.css'
 import { Card, CardHeader, CardText } from 'material-ui/Card'
 import AppBar from 'material-ui/AppBar'
@@ -15,7 +16,6 @@ import ActionHelp from 'material-ui/svg-icons/action/help'
 
 import styled, { css } from 'styled-components'
 import buildSkillString from './helpers/buildSkillString'
-import calculate from './helpers/calculate'
 
 const DarkenedCardHeader = styled(CardHeader)`
   background-color: rgba(0, 0, 0, 0.1);
@@ -76,7 +76,6 @@ const WarningModal = props => {
 class App extends Component {
   constructor() {
     super()
-    this.deleteRow = this.deleteRow.bind(this)
     this.state = {}
   }
 
@@ -85,17 +84,7 @@ class App extends Component {
     this.WeaponStore = this.props.store.weapons
     this.CalculatorStore = this.props.store.calculator
     this.SkillsStore = this.props.store.skills
-  }
-
-  deleteRow({ index }) {
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        calculatedWeapons: prevState.calculatedWeapons.filter(
-          (_, i) => index !== i
-        )
-      }
-    })
+    this.MonsterStore = this.props.store.monsters
   }
 
   render() {
@@ -215,20 +204,23 @@ class App extends Component {
           </Card>
           <Card expandable={true} expanded={this.state.expanded}>
             <DarkenedCardHeader
-              title="Select your monster (optional)"
+              title="Select your monster"
               actAsExpander={true}
               showExpandableButton={true}
             />
-            <CardText
-              expandable={true}
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'space-around',
-                alignContent: 'space-around'
-              }}
-            >
-              <Select />
+            <CardText expandable={true}>
+              <Select
+                style={{ width: 200 }}
+                onChange={this.UIStore.selectMonster}
+                value={this.UIStore.monsterSelectValue}
+                options={this.UIStore.getMonsterSelectOptions}
+              />
+              <MonsterTable
+                data={
+                  this.MonsterStore.selectedMonster &&
+                  this.MonsterStore.selectedMonster.hitzone_data
+                }
+              />
             </CardText>
           </Card>
           <FlexDiv>
@@ -248,7 +240,7 @@ class App extends Component {
           <DisplayTable
             style={{ marginBottom: 30 }}
             data={this.CalculatorStore.results.peek()}
-            deleteRow={this.deleteRow}
+            deleteRow={this.CalculatorStore.deleteRow}
           />
         </div>
         <WarningModal

@@ -3,7 +3,7 @@ import dbhelper from '../helpers/dbhelper'
 
 export default class WeaponsStore {
   @observable selectedWeapons
-  @observable weaponsData = dbhelper.allWeapons()
+  @observable weaponData = dbhelper.allWeapons()
   @observable weaponTypes = dbhelper.weaponTypeDefs()
 
   constructor(rootStore) {
@@ -13,7 +13,7 @@ export default class WeaponsStore {
   @computed
   get getWeaponsForWeaponSelect() {
     if (this.rootStore.UI.singleWeapon) {
-      return this.weaponsData.map(x => ({ value: x.wep_id, label: x.name }))
+      return this.weaponData.map(x => ({ value: x.wep_id, label: x.name }))
     } else {
       return this.weaponTypes.map(x => ({
         value: x.wep_type_id,

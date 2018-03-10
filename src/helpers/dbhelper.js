@@ -40,7 +40,7 @@ export default {
   },
 
   getSharpnessMultiplier(sharpnessName) {
-    return db.sharpnessTypeDefs[sharpnessName]
+    return db.sharpnessTypeDefs[sharpnessName].raw
   },
 
   getSharpnessForHandicraftAndID(wep_id, handicraft_level) {
@@ -48,5 +48,13 @@ export default {
     return weapon.sharpness_data.find(
       x => x.handicraft_level === handicraft_level
     )
+  },
+
+  allMonsters() {
+    return db.monsters
+  },
+
+  monster(monster_id) {
+    return db.monsters.find(monster => monster.monster_id === monster_id)
   }
 }

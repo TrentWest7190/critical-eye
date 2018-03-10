@@ -9,7 +9,11 @@ export default class UIStore {
   @observable singleWeapon = false
   @observable sharpnessSelectValue = null
   @observable sharpnessModalOpen = false
-  @observable skillSelectValues = savedSkills ? new Map(Object.entries(JSON.parse(savedSkills))) : new Map()
+  @observable monsterSelectValue = null
+  @observable
+  skillSelectValues = savedSkills
+    ? new Map(Object.entries(JSON.parse(savedSkills)))
+    : new Map()
 
   constructor(rootStore) {
     this.rootStore = rootStore
@@ -18,12 +22,14 @@ export default class UIStore {
   @computed
   get disableCalculateButton() {
     const sharpnessDisabled = this.disableSharpnessDropdown
-    const weaponSelectValue = this.singleWeapon ? this.singleWeaponSelectValue : this.weaponTypeSelectValue
-      if (sharpnessDisabled) {
-        return !weaponSelectValue
-      } else {
-        return !weaponSelectValue || !this.sharpnessSelectValue
-      }
+    const weaponSelectValue = this.singleWeapon
+      ? this.singleWeaponSelectValue
+      : this.weaponTypeSelectValue
+    if (sharpnessDisabled) {
+      return !weaponSelectValue
+    } else {
+      return !weaponSelectValue || !this.sharpnessSelectValue
+    }
   }
 
   @computed
@@ -47,6 +53,14 @@ export default class UIStore {
   @computed
   get weaponSelectPlaceholder() {
     return this.singleWeapon ? 'Weapon' : 'Weapon type'
+  }
+
+  @computed
+  get getMonsterSelectOptions() {
+    return this.rootStore.monsters.monsterData.map(x => ({
+      value: x.monster_id,
+      label: x.name
+    }))
   }
 
   @computed
@@ -89,8 +103,19 @@ export default class UIStore {
   @action.bound
   updateSkill(skillName) {
     return selectedValue => {
-      this.skillSelectValues.set(skillName, selectedValue && selectedValue.value)
-      localStorage.setItem('savedSkills', JSON.stringify(this.skillSelectValues.toJS()))
+      this.skillSelectValues.set(
+        skillName,
+        selectedValue && selectedValue.value
+      )
+      localStorage.setItem(
+        'savedSkills',
+        JSON.stringify(this.skillSelectValues.toJS())
+      )
     }
+  }
+
+  @action.bound
+  selectMonster(selectedValue) {
+    this.monsterSelectValue = selectedValue && selectedValue.value
   }
 }

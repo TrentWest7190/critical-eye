@@ -52,14 +52,21 @@ export default class CalculatorStore {
       : this.rootStore.weapons.getSelectedWeapons
     const sharpnessSelectValue = this.rootStore.UI.sharpnessSelectValue
     const handicraftLevel = this.rootStore.skills.handicraftLevel
+    const averageElementalValues = this.rootStore.monsters.averageValuesForMonster
     const results = calculate(
       skillsAndAugments,
       selectedWeapons,
       sharpnessSelectValue,
-      handicraftLevel
+      handicraftLevel,
+      averageElementalValues
     )
 
     this.results = this.results.concat(results)
     localStorage.setItem('savedWeapons', JSON.stringify(this.results))
+  }
+
+  @action.bound
+  deleteRow(index) {
+    this.results = this.results.filter((_,i) => i !== index)
   }
 }
