@@ -1,8 +1,26 @@
 {
-  "red": 0.5,
-  "orange": 0.75,
-  "yellow": 1,
-  "green": 1.05,
-  "blue": 1.2,
-  "white": 1.32
+  "red": {
+    "raw": 0.5,
+    "elemental": 0.25
+  },
+  "orange": {
+    "raw": 0.75,
+    "elemental": 0.5
+  },
+  "yellow": {
+    "raw": 1,
+    "elemental": 0.75
+  },
+  "green": {
+    "raw": 1.05,
+    "elemental": 1
+  },
+  "blue": {
+    "raw": 1.2,
+    "elemental": 1.0625
+  },
+  "white": {
+    "raw": 1.32,
+    "elemental": 1.125
+  }
 }

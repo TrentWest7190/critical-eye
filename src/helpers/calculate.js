@@ -1,10 +1,11 @@
 import { BigNumber } from 'bignumber.js'
 import dbhelper from './dbhelper'
 
-export default function calculate(skills, weaponArray, minimumSharpness, handicraftLevel) {
+export default function calculate(skills, weaponArray, minimumSharpness, handicraftLevel, averageElementalValues) {
   const sharpnesses = ["red", "orange", "yellow", "green", "blue", "white"]
 
   const returnWeapons = weaponArray.map(weapon => {
+    console.log(skills)
     const isRanged = dbhelper.weaponIsRanged(weapon.wep_id)
     const sharpness_data = isRanged ? {} : dbhelper.getSharpnessForHandicraftAndID(weapon.wep_id, handicraftLevel)
     const maxSharpnessValue = getMaxSharpnessValue(sharpness_data)
@@ -14,7 +15,7 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
         return !isElemental
       }
       return true
-    }).map(x => skills[x].value)
+    }).map(x => skills[x])
     const totalAttackMultiplier = getTotalAttackMultipliers(skillsArray)
     const totalAttackMod = getTotalAttackMod(skillsArray)
     const totalAttack = getTotalAttack(weapon.true_attack, totalAttackMultiplier, totalAttackMod)
@@ -55,7 +56,12 @@ export default function calculate(skills, weaponArray, minimumSharpness, handicr
       totalAttack,
       minimumSharpness: sharpnessIndex,
       totalHits: sharpnessValue,
-      isRanged
+      isRanged,
+      averageElementalValues,
+      element: {
+        type: weapon.element_type,
+        value: weapon.element_value
+      }
     }
   })
 

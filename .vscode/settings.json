@@ -1,0 +1,10 @@
+{
+    "prettier.semi": false,
+    "prettier.eslintIntegration": true,
+    "prettier.singleQuote": true,
+    "editor.tabSize": 2,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": false
+}

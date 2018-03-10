@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'mobx-react'
+import { Store } from './store'
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import 'react-select/dist/react-select.css'
@@ -22,5 +24,11 @@ const muiTheme = getMuiTheme({
   }
 })
 
-ReactDOM.render(<MuiThemeProvider muiTheme={muiTheme}><App/></MuiThemeProvider>, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(
+  <Provider store={new Store()}>
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <App/>
+    </MuiThemeProvider>
+  </Provider>, 
+  document.getElementById('root')
+);
